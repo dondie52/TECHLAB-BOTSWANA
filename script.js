@@ -5,8 +5,21 @@ const menuToggle = document.querySelector(".menu-toggle");
 const navLinks = document.querySelectorAll(".site-nav a");
 const quoteForm = document.querySelector("#quote-form");
 const formStatus = document.querySelector("#form-status");
+const quoteSubmitButton = quoteForm?.querySelector('button[type="submit"]');
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 const isMobile = window.matchMedia("(max-width: 640px)").matches;
+const supabaseConfig = window.TECHLAB_SUPABASE ?? null;
+const supabaseClient =
+  window.supabase?.createClient &&
+  supabaseConfig?.url &&
+  supabaseConfig?.publishableKey
+    ? window.supabase.createClient(supabaseConfig.url, supabaseConfig.publishableKey, {
+        auth: {
+          persistSession: false,
+          autoRefreshToken: false,
+        },
+      })
+    : null;
 
 function updateHeaderState() {
   header?.classList.toggle("is-scrolled", window.scrollY > 12);
@@ -45,6 +58,38 @@ quoteForm?.addEventListener("submit", (event) => {
     message: formData.get("message")?.toString().trim(),
   };
 
+  submitQuote(details).catch(() => {
+    openWhatsappFallback(details, "Opening WhatsApp with your request...");
+  });
+});
+
+async function submitQuote(details) {
+  setFormPending(true, supabaseClient ? "Sending your request..." : "Supabase key missing. Opening WhatsApp instead...");
+
+  if (!supabaseClient) {
+    openWhatsappFallback(details, "Supabase key missing. Opening WhatsApp instead...");
+    return;
+  }
+
+  const { error } = await supabaseClient.from(supabaseConfig.table || "quote_requests").insert({
+    name: details.name,
+    phone: details.phone,
+    location: details.location,
+    service: details.service,
+    message: details.message,
+    source: "github-pages",
+  });
+
+  if (error) {
+    openWhatsappFallback(details, "Supabase submit failed. Opening WhatsApp instead...");
+    return;
+  }
+
+  quoteForm?.reset();
+  setFormPending(false, "Quote request sent. TechLab Botswana will follow up soon.");
+}
+
+function openWhatsappFallback(details, statusMessage) {
   const message = [
     "Hello TechLab Botswana, I would like to request a quote.",
     "",
@@ -56,9 +101,23 @@ quoteForm?.addEventListener("submit", (event) => {
   ].join("\n");
 
   const whatsappUrl = `https://wa.me/26776984827?text=${encodeURIComponent(message)}`;
-  formStatus.textContent = "Opening WhatsApp with your request...";
+  setFormPending(false, statusMessage);
   window.open(whatsappUrl, "_blank", "noopener");
-});
+}
+
+function setFormPending(isPending, message) {
+  if (quoteSubmitButton) {
+    quoteSubmitButton.disabled = isPending;
+    quoteSubmitButton.textContent = isPending ? "Sending..." : "Send Request";
+    if (!isPending) {
+      quoteSubmitButton.textContent = "Send Request";
+    }
+  }
+
+  if (formStatus) {
+    formStatus.textContent = message;
+  }
+}
 
 if (window.Splitting) {
   Splitting();

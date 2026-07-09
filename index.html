@@ -8,14 +8,14 @@
       name="description"
       content="TechLab Botswana provides CCTV installations, POS systems, websites, computer repairs, networking, and IT support from Mahalapye with nationwide mobile support across Botswana."
     >
-    <link rel="canonical" href="https://techlabbotswana.co.bw/">
+    <link rel="canonical" href="https://dondie52.github.io/TECHLAB-BOTSWANA/">
     <meta property="og:title" content="TechLab Botswana | IT, CCTV, POS & Website Solutions">
     <meta
       property="og:description"
       content="CCTV installations, POS systems, websites, computer repairs, networking, and IT support from Mahalapye with nationwide mobile support across Botswana."
     >
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://techlabbotswana.co.bw/">
+    <meta property="og:url" content="https://dondie52.github.io/TECHLAB-BOTSWANA/">
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -378,11 +378,11 @@
               Tell us what you need and where you are.
             </h2>
             <p class="reveal">
-              The form prepares your message for WhatsApp so the TechLab Botswana team can respond quickly.
+              The form sends requests to TechLab Botswana and falls back to WhatsApp if the live backend is not configured yet.
             </p>
           </div>
 
-          <form class="quote-form reveal" id="quote-form" action="mailto:info@techlabbotswana.co.bw" method="post" enctype="text/plain">
+          <form class="quote-form reveal" id="quote-form">
             <label>
               Name
               <input type="text" name="name" autocomplete="name" required>
@@ -414,7 +414,7 @@
               Message
               <textarea name="message" rows="5" required></textarea>
             </label>
-            <button class="button button-primary full-span" type="submit">Send Request on WhatsApp</button>
+            <button class="button button-primary full-span" type="submit">Send Request</button>
             <p class="form-status full-span" id="form-status" role="status" aria-live="polite"></p>
           </form>
         </div>
@@ -484,6 +484,8 @@
         "areaServed": "Botswana"
       }
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase.config.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
     <script src="https://unpkg.com/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://unpkg.com/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
