@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
     <title>TechLab Botswana | IT, CCTV, POS & Website Solutions</title>
     <meta
       name="description"
@@ -19,7 +20,7 @@
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting.css">
     <link rel="stylesheet" href="styles.css">
   </head>
@@ -43,28 +44,27 @@
       </button>
 
       <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
-        <a href="#chapters">Chapters</a>
         <a href="#services">Services</a>
         <a href="#nationwide">Nationwide</a>
         <a href="#quote">Quote</a>
+        <a href="#contact">Contact</a>
         <a class="nav-cta" href="https://wa.me/26776984827" target="_blank" rel="noopener">WhatsApp</a>
       </nav>
     </header>
 
     <main>
       <section class="hero scene" id="home" aria-labelledby="hero-title" data-bg="0">
-        <div class="hero-orbit" aria-hidden="true">
-          <span></span>
-          <span></span>
-          <span></span>
+        <div class="hero-media" aria-hidden="true">
+          <img
+            class="hero-photo"
+            src="assets/images/hero-workshop.png"
+            alt=""
+            width="1920"
+            height="1080"
+            decoding="async"
+            fetchpriority="high"
+          >
         </div>
-        <div class="hero-tech-field" aria-hidden="true">
-          <span class="field-line line-one"></span>
-          <span class="field-line line-two"></span>
-          <span class="field-node node-one"></span>
-          <span class="field-node node-two"></span>
-        </div>
-
         <div class="section-inner hero-inner">
           <div class="logo-lockup hero-reveal">
             <span>TECHLAB BOTSWANA</span>
@@ -74,26 +74,28 @@
             Technology support for Botswana, built with precision.
           </h1>
           <p class="hero-copy hero-reveal">
-            Based in Mahalapye and serving customers nationwide, TechLab Botswana helps homes, shops,
-            offices, schools, and businesses with CCTV, POS systems, websites, computer repairs,
-            networking, and IT support.
+            Hands-on IT, CCTV, POS, and website help from Mahalapye — available nationwide.
           </p>
           <div class="hero-actions hero-reveal">
             <a class="button button-primary" href="https://wa.me/26776984827" target="_blank" rel="noopener">WhatsApp Us</a>
-            <a class="button button-secondary" href="#services">View Services</a>
+            <a class="button button-secondary" href="#quote">Request a Quote</a>
           </div>
         </div>
 
-        <div class="hero-meta" aria-label="Quick contact details">
-          <a href="tel:+26776984827">+267 76984827</a>
-          <span>Behind Sefalana Hyper Store, Mahalapye</span>
-          <span>Mon-Sat, 8:00 AM - 6:00 PM</span>
-        </div>
         <a class="scroll-indicator" href="#chapters" aria-label="Scroll to chapters">
           <span></span>
           <small>Scroll</small>
         </a>
       </section>
+
+      <aside class="contact-strip" aria-label="Contact details">
+        <div class="section-inner contact-strip-inner">
+          <a href="tel:+26776984827">+267 76984827</a>
+          <span>Behind Sefalana Hyper Store, Mahalapye</span>
+          <span>Mon–Sat, 8:00 AM – 6:00 PM</span>
+          <a class="contact-strip-link" href="#quote">Request a quote</a>
+        </div>
+      </aside>
 
       <section class="chapter-intro scene" id="chapters" aria-labelledby="chapters-title" data-bg="1">
         <div class="section-inner intro-grid">
@@ -107,22 +109,23 @@
       <section class="chapter scene" aria-labelledby="chapter-fix" data-bg="1">
         <div class="section-inner chapter-layout">
           <div class="chapter-copy">
-            <p class="chapter-number reveal">Chapter 01</p>
+            <p class="chapter-number reveal">Repairs</p>
             <h2 id="chapter-fix" class="split-heading reveal" data-splitting>We fix.</h2>
             <p class="chapter-text reveal">
               Computer issues, software problems, printer setup, slow laptops, and everyday IT support
               for homes and businesses.
             </p>
           </div>
-          <div class="chapter-visual chapter-laptop visual-animate" aria-hidden="true">
-            <svg viewBox="0 0 520 360">
-              <path class="device-glow" d="M84 248h352l36 46H48z"/>
-              <rect class="device-fill" x="102" y="62" width="316" height="204" rx="18"/>
-              <rect class="screen-fill" x="126" y="86" width="268" height="148" rx="10"/>
-              <path class="visual-line" d="M151 127h126M151 160h196M151 193h94"/>
-              <path class="tool-line" d="M355 249l42 42M397 249l-42 42"/>
-              <circle class="visual-node" cx="336" cy="160" r="12"/>
-            </svg>
+          <div class="chapter-visual visual-animate">
+            <img
+              class="chapter-photo"
+              src="assets/images/chapter-fix.png"
+              alt="Technician repairing a laptop on a workbench in a Southern African workshop"
+              width="1600"
+              height="1200"
+              loading="lazy"
+              decoding="async"
+            >
           </div>
         </div>
       </section>
@@ -130,23 +133,22 @@
       <section class="chapter scene" aria-labelledby="chapter-install" data-bg="2">
         <div class="section-inner chapter-layout">
           <div class="chapter-copy">
-            <p class="chapter-number reveal">Chapter 02</p>
+            <p class="chapter-number reveal">Installations</p>
             <h2 id="chapter-install" class="split-heading reveal" data-splitting>We install.</h2>
             <p class="chapter-text reveal">
               CCTV camera systems, Wi-Fi networks, POS systems, printers, and business technology setups.
             </p>
           </div>
-          <div class="chapter-visual chapter-cctv visual-animate" aria-hidden="true">
-            <svg viewBox="0 0 520 360">
-              <path class="signal-line" d="M336 116c42 24 68 62 78 111"/>
-              <path class="signal-line delay-a" d="M352 82c66 38 108 95 122 169"/>
-              <path class="device-fill" d="M82 128h176l38 34-38 34H82z"/>
-              <circle class="screen-fill" cx="143" cy="162" r="34"/>
-              <circle class="visual-node" cx="143" cy="162" r="12"/>
-              <path class="visual-line" d="M296 162h58v104M330 266h72"/>
-              <rect class="device-fill" x="344" y="160" width="72" height="116" rx="12"/>
-              <path class="visual-line" d="M362 190h36M362 214h22"/>
-            </svg>
+          <div class="chapter-visual visual-animate">
+            <img
+              class="chapter-photo"
+              src="assets/images/chapter-cctv.png"
+              alt="CCTV security camera being professionally mounted on a shop exterior"
+              width="1600"
+              height="1200"
+              loading="lazy"
+              decoding="async"
+            >
           </div>
         </div>
       </section>
@@ -154,23 +156,23 @@
       <section class="chapter scene" aria-labelledby="chapter-connect" data-bg="3">
         <div class="section-inner chapter-layout">
           <div class="chapter-copy">
-            <p class="chapter-number reveal">Chapter 03</p>
+            <p class="chapter-number reveal">Connectivity</p>
             <h2 id="chapter-connect" class="split-heading reveal" data-splitting>We connect.</h2>
             <p class="chapter-text reveal">
               From Mahalapye to the rest of Botswana, we support customers remotely and through nationwide
               mobile technician support.
             </p>
           </div>
-          <div class="chapter-visual chapter-router visual-animate" aria-hidden="true">
-            <svg viewBox="0 0 520 360">
-              <path class="signal-line" d="M180 124a112 112 0 0 1 160 0"/>
-              <path class="signal-line delay-a" d="M136 86a176 176 0 0 1 248 0"/>
-              <path class="signal-line delay-b" d="M220 166a56 56 0 0 1 80 0"/>
-              <rect class="device-fill" x="154" y="206" width="212" height="76" rx="18"/>
-              <path class="visual-line" d="M190 206v-42M330 206v-42"/>
-              <circle class="visual-node" cx="260" cy="244" r="9"/>
-              <path class="dotted-line" d="M260 244C178 248 122 276 80 314M260 244c82-14 138-2 188 42"/>
-            </svg>
+          <div class="chapter-visual visual-animate">
+            <img
+              class="chapter-photo"
+              src="assets/images/chapter-network.png"
+              alt="Wi-Fi router and network cables being set up in a small office"
+              width="1600"
+              height="1200"
+              loading="lazy"
+              decoding="async"
+            >
           </div>
         </div>
       </section>
@@ -178,23 +180,23 @@
       <section class="chapter scene" aria-labelledby="chapter-build" data-bg="4">
         <div class="section-inner chapter-layout">
           <div class="chapter-copy">
-            <p class="chapter-number reveal">Chapter 04</p>
+            <p class="chapter-number reveal">Websites</p>
             <h2 id="chapter-build" class="split-heading reveal" data-splitting>We build.</h2>
             <p class="chapter-text reveal">
               Clean, mobile-friendly websites for local businesses, shops, service providers, schools,
               and organizations.
             </p>
           </div>
-          <div class="chapter-visual chapter-browser visual-animate" aria-hidden="true">
-            <svg viewBox="0 0 520 360">
-              <rect class="device-fill" x="78" y="66" width="364" height="228" rx="18"/>
-              <path class="screen-fill" d="M78 118h364"/>
-              <circle class="visual-node" cx="112" cy="92" r="6"/>
-              <circle class="visual-node" cx="136" cy="92" r="6"/>
-              <circle class="visual-node" cx="160" cy="92" r="6"/>
-              <path class="visual-line" d="M122 158h132M122 192h222M122 226h94"/>
-              <rect class="screen-fill" x="318" y="154" width="78" height="78" rx="12"/>
-            </svg>
+          <div class="chapter-visual visual-animate">
+            <img
+              class="chapter-photo"
+              src="assets/images/chapter-website.png"
+              alt="Web designer at a screen showing a clean business website mockup"
+              width="1600"
+              height="1200"
+              loading="lazy"
+              decoding="async"
+            >
           </div>
         </div>
       </section>
@@ -210,133 +212,183 @@
 
           <div class="service-scenes" aria-label="Visual service scenes">
             <article class="service-scene visual-animate">
-              <div class="scene-illustration cctv-scene" aria-hidden="true">
-                <span class="camera-shape"></span>
-                <span class="dvr-shape"></span>
-                <span class="phone-shape"></span>
+              <div class="scene-illustration scene-photo">
+                <img
+                  src="assets/images/chapter-cctv.png"
+                  alt="CCTV camera and recorder installation for shop security"
+                  width="800"
+                  height="600"
+                  loading="lazy"
+                  decoding="async"
+                >
               </div>
               <h3>CCTV camera installation</h3>
               <p>Camera, recorder, and mobile viewing setup as one clear security system.</p>
             </article>
             <article class="service-scene visual-animate">
-              <div class="scene-illustration pos-scene" aria-hidden="true">
-                <span class="terminal-shape"></span>
-                <span class="receipt-shape"></span>
-                <span class="pay-screen-shape"></span>
+              <div class="scene-illustration scene-photo">
+                <img
+                  src="assets/images/service-pos.png"
+                  alt="POS terminal and receipt printer on a shop counter"
+                  width="800"
+                  height="600"
+                  loading="lazy"
+                  decoding="async"
+                >
               </div>
               <h3>POS systems</h3>
               <p>Checkout equipment, receipts, payment flow, and everyday retail support.</p>
             </article>
             <article class="service-scene visual-animate">
-              <div class="scene-illustration website-scene" aria-hidden="true">
-                <span class="browser-shape"></span>
-                <span class="layout-line a"></span>
-                <span class="layout-line b"></span>
-                <span class="layout-card"></span>
+              <div class="scene-illustration scene-photo">
+                <img
+                  src="assets/images/chapter-website.png"
+                  alt="Clean business website design on a computer screen"
+                  width="800"
+                  height="600"
+                  loading="lazy"
+                  decoding="async"
+                >
               </div>
               <h3>Website design</h3>
-              <p>Editorial, mobile-friendly websites that make local businesses easier to trust.</p>
+              <p>Clean, mobile-friendly websites that make local businesses easier to trust.</p>
             </article>
             <article class="service-scene visual-animate">
-              <div class="scene-illustration repair-scene" aria-hidden="true">
-                <span class="laptop-shape"></span>
-                <span class="tool-shape"></span>
-                <span class="chip-shape"></span>
+              <div class="scene-illustration scene-photo">
+                <img
+                  src="assets/images/chapter-fix.png"
+                  alt="Laptop repair and diagnostics at a technician workbench"
+                  width="800"
+                  height="600"
+                  loading="lazy"
+                  decoding="async"
+                >
               </div>
               <h3>Computer repairs</h3>
               <p>Diagnostics and repair work for laptops, slow systems, and software faults.</p>
             </article>
             <article class="service-scene visual-animate">
-              <div class="scene-illustration network-scene" aria-hidden="true">
-                <span class="router-shape"></span>
-                <span class="wave one"></span>
-                <span class="wave two"></span>
-                <span class="wave three"></span>
+              <div class="scene-illustration scene-photo">
+                <img
+                  src="assets/images/chapter-network.png"
+                  alt="Router and Wi-Fi network setup in a small office"
+                  width="800"
+                  height="600"
+                  loading="lazy"
+                  decoding="async"
+                >
               </div>
               <h3>Wi-Fi & networking</h3>
               <p>Coverage, routers, cabling, and small office networks that stay connected.</p>
             </article>
             <article class="service-scene visual-animate">
-              <div class="scene-illustration map-mini-scene" aria-hidden="true">
-                <img src="assets/BW-Mahalapye-transparent.png" alt="">
-                <span class="mini-route"></span>
+              <div class="scene-illustration scene-photo">
+                <img
+                  src="assets/images/botswana-map.png"
+                  alt="Map of Botswana with Mahalapye as the support origin"
+                  width="800"
+                  height="600"
+                  loading="lazy"
+                  decoding="async"
+                >
               </div>
               <h3>Nationwide support</h3>
               <p>Mahalapye as the base, with remote and mobile support across Botswana.</p>
             </article>
           </div>
 
-          <div class="service-grid">
-            <article class="service-card reveal">
-              <span class="service-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24"><path d="M4 8h11v8H4z"/><path d="m15 11 5-3v8l-5-3z"/><path d="M8 16v3"/></svg>
-              </span>
-              <h3>CCTV Installation</h3>
-              <p>CCTV camera installations, viewing setup, maintenance, and troubleshooting.</p>
-            </article>
-            <article class="service-card reveal">
-              <span class="service-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24"><path d="M6 4h12v10H6z"/><path d="M8 18h8"/><path d="m9 14-2 6"/><path d="m15 14 2 6"/></svg>
-              </span>
-              <h3>POS Systems</h3>
-              <p>POS system setup and fixing for tills, printers, drawers, and daily retail flow.</p>
-            </article>
-            <article class="service-card reveal">
-              <span class="service-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24"><path d="M4 5h16v14H4z"/><path d="M4 9h16"/><path d="M8 13h4"/><path d="M8 16h8"/></svg>
-              </span>
-              <h3>Website Design</h3>
-              <p>Clean, responsive websites for businesses, schools, shops, and organizations.</p>
-            </article>
-            <article class="service-card reveal">
-              <span class="service-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24"><path d="M5 6h14v10H5z"/><path d="M3 20h18"/><path d="M10 16h4"/></svg>
-              </span>
-              <h3>Computer Repairs</h3>
-              <p>Diagnostics, slow laptop fixes, upgrades, data help, and software problem solving.</p>
-            </article>
-            <article class="service-card reveal">
-              <span class="service-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24"><path d="M12 18h.01"/><path d="M8.5 14.5a5 5 0 0 1 7 0"/><path d="M5 11a10 10 0 0 1 14 0"/><path d="M2 7a15 15 0 0 1 20 0"/></svg>
-              </span>
-              <h3>Wi-Fi & Networking</h3>
-              <p>Router setup, office networks, Wi-Fi coverage, cabling, and connectivity fixes.</p>
-            </article>
-            <article class="service-card reveal">
-              <span class="service-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24"><path d="M6 9V4h12v5"/><path d="M6 17H4V9h16v8h-2"/><path d="M7 14h10v7H7z"/></svg>
-              </span>
-              <h3>Printer Setup</h3>
-              <p>Driver installation, wireless printing, office printer setup, and troubleshooting.</p>
-            </article>
-            <article class="service-card reveal">
-              <span class="service-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24"><path d="M5 4h14v16H5z"/><path d="M8 9h8"/><path d="M8 13h5"/><path d="M8 17h8"/></svg>
-              </span>
-              <h3>Software Installation</h3>
-              <p>Operating systems, productivity apps, antivirus setup, updates, and app fixes.</p>
-            </article>
-            <article class="service-card reveal">
-              <span class="service-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24"><path d="M4 5h16v12H4z"/><path d="M8 21h8"/><path d="M12 17v4"/><path d="M8 9h3"/><path d="M13 9h3"/></svg>
-              </span>
-              <h3>Business IT Support</h3>
-              <p>Reliable technology help for offices, shops, schools, and growing teams.</p>
-            </article>
-            <article class="service-card reveal">
-              <span class="service-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24"><path d="M12 21s7-5 7-11a7 7 0 0 0-14 0c0 6 7 11 7 11z"/><path d="M12 10h.01"/><path d="M16 7l3-3"/><path d="M8 7 5 4"/></svg>
-              </span>
-              <h3>Nationwide Mobile Support</h3>
-              <p>Remote assistance and mobile technician coordination across Botswana.</p>
-            </article>
+          <div class="service-catalog">
+            <p class="service-catalog-label reveal">Full service list</p>
+            <div class="service-grid">
+              <article class="service-card reveal">
+                <span class="service-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M4 8h11v8H4z"/><path d="m15 11 5-3v8l-5-3z"/><path d="M8 16v3"/></svg>
+                </span>
+                <div class="service-copy">
+                  <h3>CCTV Installation</h3>
+                  <p>Camera installs, viewing setup, maintenance, and troubleshooting.</p>
+                </div>
+              </article>
+              <article class="service-card reveal">
+                <span class="service-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M6 4h12v10H6z"/><path d="M8 18h8"/><path d="m9 14-2 6"/><path d="m15 14 2 6"/></svg>
+                </span>
+                <div class="service-copy">
+                  <h3>POS Systems</h3>
+                  <p>Till setup and fixes for printers, drawers, and daily retail flow.</p>
+                </div>
+              </article>
+              <article class="service-card reveal">
+                <span class="service-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M4 5h16v14H4z"/><path d="M4 9h16"/><path d="M8 13h4"/><path d="M8 16h8"/></svg>
+                </span>
+                <div class="service-copy">
+                  <h3>Website Design</h3>
+                  <p>Clean, responsive sites for businesses, schools, and shops.</p>
+                </div>
+              </article>
+              <article class="service-card reveal">
+                <span class="service-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M5 6h14v10H5z"/><path d="M3 20h18"/><path d="M10 16h4"/></svg>
+                </span>
+                <div class="service-copy">
+                  <h3>Computer Repairs</h3>
+                  <p>Diagnostics, slow laptop fixes, upgrades, and software help.</p>
+                </div>
+              </article>
+              <article class="service-card reveal">
+                <span class="service-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M12 18h.01"/><path d="M8.5 14.5a5 5 0 0 1 7 0"/><path d="M5 11a10 10 0 0 1 14 0"/><path d="M2 7a15 15 0 0 1 20 0"/></svg>
+                </span>
+                <div class="service-copy">
+                  <h3>Wi-Fi & Networking</h3>
+                  <p>Router setup, office networks, coverage, and cabling.</p>
+                </div>
+              </article>
+              <article class="service-card reveal">
+                <span class="service-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M6 9V4h12v5"/><path d="M6 17H4V9h16v8h-2"/><path d="M7 14h10v7H7z"/></svg>
+                </span>
+                <div class="service-copy">
+                  <h3>Printer Setup</h3>
+                  <p>Drivers, wireless printing, office setup, and troubleshooting.</p>
+                </div>
+              </article>
+              <article class="service-card reveal">
+                <span class="service-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M5 4h14v16H5z"/><path d="M8 9h8"/><path d="M8 13h5"/><path d="M8 17h8"/></svg>
+                </span>
+                <div class="service-copy">
+                  <h3>Software Installation</h3>
+                  <p>Operating systems, apps, antivirus, updates, and fixes.</p>
+                </div>
+              </article>
+              <article class="service-card reveal">
+                <span class="service-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M4 5h16v12H4z"/><path d="M8 21h8"/><path d="M12 17v4"/><path d="M8 9h3"/><path d="M13 9h3"/></svg>
+                </span>
+                <div class="service-copy">
+                  <h3>Business IT Support</h3>
+                  <p>Ongoing tech help for offices, shops, schools, and teams.</p>
+                </div>
+              </article>
+              <article class="service-card reveal">
+                <span class="service-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M12 21s7-5 7-11a7 7 0 0 0-14 0c0 6 7 11 7 11z"/><path d="M12 10h.01"/><path d="M16 7l3-3"/><path d="M8 7 5 4"/></svg>
+                </span>
+                <div class="service-copy">
+                  <h3>Nationwide Mobile Support</h3>
+                  <p>Remote help and mobile technician coordination across Botswana.</p>
+                </div>
+              </article>
+            </div>
           </div>
         </div>
       </section>
 
       <section class="nationwide scene" id="nationwide" aria-labelledby="nationwide-title" data-bg="3">
         <div class="section-inner nationwide-layout">
-          <div>
+          <div class="nationwide-copy-block">
             <p class="chapter-kicker reveal">Nationwide support</p>
             <h2 id="nationwide-title" class="split-heading reveal" data-splitting>
               Based in Mahalapye. Supporting Botswana nationwide.
@@ -345,28 +397,42 @@
               TechLab Botswana starts from a real service point behind Sefalana Hyper Store in Mahalapye,
               then extends support through remote assistance and nationwide mobile technician support.
             </p>
+            <ul class="nationwide-points reveal">
+              <li>
+                <strong>Workshop base</strong>
+                <span>Behind Sefalana Hyper Store, Mahalapye</span>
+              </li>
+              <li>
+                <strong>Remote help</strong>
+                <span>Diagnostics and guidance without the wait</span>
+              </li>
+              <li>
+                <strong>Mobile technicians</strong>
+                <span>On-site support coordinated across Botswana</span>
+              </li>
+            </ul>
           </div>
 
-          <div class="map-visual reveal" aria-label="Botswana map showing Mahalapye as the support origin">
-            <div class="map-frame">
-              <img src="assets/BW-Mahalapye-transparent.png" alt="Map of Botswana with Mahalapye marked">
-              <svg class="map-routes" viewBox="0 0 530 527" aria-hidden="true">
-                <path class="map-line line-a" d="M380 312 C326 254 255 210 170 162"/>
-                <path class="map-line line-b" d="M380 312 C430 260 468 230 514 219"/>
-                <path class="map-line line-c" d="M380 312 C420 360 452 398 494 430"/>
-                <path class="map-line line-d" d="M380 312 C333 382 283 438 223 492"/>
-                <path class="map-line line-e" d="M380 312 C275 320 174 348 66 391"/>
-                <circle class="origin-pulse" cx="380" cy="312" r="13"/>
-                <circle class="origin-core" cx="380" cy="312" r="6"/>
-                <circle class="map-node" cx="170" cy="162" r="5"/>
-                <circle class="map-node" cx="514" cy="219" r="5"/>
-                <circle class="map-node" cx="494" cy="430" r="5"/>
-                <circle class="map-node" cx="223" cy="492" r="5"/>
-                <circle class="map-node" cx="66" cy="391" r="5"/>
-              </svg>
-              <span class="map-label map-origin">Mahalapye</span>
+          <figure class="map-visual reveal">
+            <div class="map-stage">
+              <img
+                class="map-photo"
+                src="assets/images/botswana-map.png"
+                alt="Map of Botswana with Mahalapye marked as the support origin"
+                width="1600"
+                height="1200"
+                loading="lazy"
+                decoding="async"
+              >
             </div>
-          </div>
+            <figcaption class="map-caption">
+              <span class="map-pin" aria-hidden="true"></span>
+              <span>
+                <strong>Mahalapye</strong>
+                Support origin for nationwide coverage
+              </span>
+            </figcaption>
+          </figure>
         </div>
       </section>
 
@@ -378,7 +444,7 @@
               Tell us what you need and where you are.
             </h2>
             <p class="reveal">
-              The form sends requests to TechLab Botswana and falls back to WhatsApp if the live backend is not configured yet.
+              Share a few details and we will follow up with a clear next step — or continue on WhatsApp if you prefer.
             </p>
           </div>
 
@@ -428,10 +494,22 @@
             <p class="contact-copy reveal">Call or WhatsApp TechLab Botswana today.</p>
           </div>
           <div class="contact-panel reveal">
-            <div class="contact-detail"><span>Phone/WhatsApp</span><strong>+267 76984827</strong></div>
-            <div class="contact-detail"><span>Email</span><strong>info@techlabbotswana.co.bw</strong></div>
-            <div class="contact-detail"><span>Location</span><strong>Behind Sefalana Hyper Store, Mahalapye, Botswana</strong></div>
-            <div class="contact-detail"><span>Hours</span><strong>Monday to Saturday, 8:00 AM - 6:00 PM</strong></div>
+            <div class="contact-detail">
+              <span>Phone/WhatsApp</span>
+              <strong><a href="https://wa.me/26776984827" target="_blank" rel="noopener">+267 76984827</a></strong>
+            </div>
+            <div class="contact-detail">
+              <span>Email</span>
+              <strong><a href="mailto:info@techlabbotswana.co.bw">info@techlabbotswana.co.bw</a></strong>
+            </div>
+            <div class="contact-detail">
+              <span>Location</span>
+              <strong>Behind Sefalana Hyper Store, Mahalapye, Botswana</strong>
+            </div>
+            <div class="contact-detail">
+              <span>Hours</span>
+              <strong>Monday to Saturday, 8:00 AM – 6:00 PM</strong>
+            </div>
             <div class="contact-actions">
               <a class="button button-primary" href="https://wa.me/26776984827" target="_blank" rel="noopener">WhatsApp</a>
               <a class="button button-secondary" href="mailto:info@techlabbotswana.co.bw">Email</a>
@@ -452,7 +530,7 @@
           Behind Sefalana Hyper Store, Mahalapye, Botswana<br>
           Phone/WhatsApp: <a href="https://wa.me/26776984827" target="_blank" rel="noopener">+267 76984827</a><br>
           Email: <a href="mailto:info@techlabbotswana.co.bw">info@techlabbotswana.co.bw</a><br>
-          Open Monday to Saturday, 8:00 AM - 6:00 PM<br>
+          Open Monday to Saturday, 8:00 AM – 6:00 PM<br>
           Nationwide mobile support available
         </address>
       </div>
