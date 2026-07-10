@@ -349,17 +349,16 @@ if (window.gsap && window.ScrollTrigger && !reducedMotion) {
   gsap.utils.toArray(".service-card").forEach((card, index) => {
     gsap.fromTo(
       card,
-      { y: 70, opacity: 0, rotateX: isMobile ? 0 : 8 },
+      { y: 28, opacity: 0 },
       {
         y: 0,
         opacity: 1,
-        rotateX: 0,
-        duration: 0.82,
-        delay: (index % 3) * 0.06,
+        duration: 0.6,
+        delay: (index % 3) * 0.05,
         ease: "power3.out",
         scrollTrigger: {
           trigger: card,
-          start: "top 88%",
+          start: "top 90%",
         },
       },
     );
