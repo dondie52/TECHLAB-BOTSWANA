@@ -19,7 +19,7 @@
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting.css">
     <link rel="stylesheet" href="styles.css">
   </head>
@@ -53,6 +53,17 @@
 
     <main>
       <section class="hero scene" id="home" aria-labelledby="hero-title" data-bg="0">
+        <div class="hero-media" aria-hidden="true">
+          <img
+            class="hero-photo"
+            src="assets/images/hero-workshop.png"
+            alt=""
+            width="1920"
+            height="1080"
+            decoding="async"
+            fetchpriority="high"
+          >
+        </div>
         <div class="hero-orbit" aria-hidden="true">
           <span></span>
           <span></span>
@@ -107,22 +118,23 @@
       <section class="chapter scene" aria-labelledby="chapter-fix" data-bg="1">
         <div class="section-inner chapter-layout">
           <div class="chapter-copy">
-            <p class="chapter-number reveal">Chapter 01</p>
+            <p class="chapter-number reveal">Repairs</p>
             <h2 id="chapter-fix" class="split-heading reveal" data-splitting>We fix.</h2>
             <p class="chapter-text reveal">
               Computer issues, software problems, printer setup, slow laptops, and everyday IT support
               for homes and businesses.
             </p>
           </div>
-          <div class="chapter-visual chapter-laptop visual-animate" aria-hidden="true">
-            <svg viewBox="0 0 520 360">
-              <path class="device-glow" d="M84 248h352l36 46H48z"/>
-              <rect class="device-fill" x="102" y="62" width="316" height="204" rx="18"/>
-              <rect class="screen-fill" x="126" y="86" width="268" height="148" rx="10"/>
-              <path class="visual-line" d="M151 127h126M151 160h196M151 193h94"/>
-              <path class="tool-line" d="M355 249l42 42M397 249l-42 42"/>
-              <circle class="visual-node" cx="336" cy="160" r="12"/>
-            </svg>
+          <div class="chapter-visual visual-animate">
+            <img
+              class="chapter-photo"
+              src="assets/images/chapter-fix.png"
+              alt="Technician repairing a laptop on a workbench in a Southern African workshop"
+              width="1600"
+              height="1200"
+              loading="lazy"
+              decoding="async"
+            >
           </div>
         </div>
       </section>
@@ -130,23 +142,22 @@
       <section class="chapter scene" aria-labelledby="chapter-install" data-bg="2">
         <div class="section-inner chapter-layout">
           <div class="chapter-copy">
-            <p class="chapter-number reveal">Chapter 02</p>
+            <p class="chapter-number reveal">Installations</p>
             <h2 id="chapter-install" class="split-heading reveal" data-splitting>We install.</h2>
             <p class="chapter-text reveal">
               CCTV camera systems, Wi-Fi networks, POS systems, printers, and business technology setups.
             </p>
           </div>
-          <div class="chapter-visual chapter-cctv visual-animate" aria-hidden="true">
-            <svg viewBox="0 0 520 360">
-              <path class="signal-line" d="M336 116c42 24 68 62 78 111"/>
-              <path class="signal-line delay-a" d="M352 82c66 38 108 95 122 169"/>
-              <path class="device-fill" d="M82 128h176l38 34-38 34H82z"/>
-              <circle class="screen-fill" cx="143" cy="162" r="34"/>
-              <circle class="visual-node" cx="143" cy="162" r="12"/>
-              <path class="visual-line" d="M296 162h58v104M330 266h72"/>
-              <rect class="device-fill" x="344" y="160" width="72" height="116" rx="12"/>
-              <path class="visual-line" d="M362 190h36M362 214h22"/>
-            </svg>
+          <div class="chapter-visual visual-animate">
+            <img
+              class="chapter-photo"
+              src="assets/images/chapter-cctv.png"
+              alt="CCTV security camera being professionally mounted on a shop exterior"
+              width="1600"
+              height="1200"
+              loading="lazy"
+              decoding="async"
+            >
           </div>
         </div>
       </section>
@@ -154,23 +165,23 @@
       <section class="chapter scene" aria-labelledby="chapter-connect" data-bg="3">
         <div class="section-inner chapter-layout">
           <div class="chapter-copy">
-            <p class="chapter-number reveal">Chapter 03</p>
+            <p class="chapter-number reveal">Connectivity</p>
             <h2 id="chapter-connect" class="split-heading reveal" data-splitting>We connect.</h2>
             <p class="chapter-text reveal">
               From Mahalapye to the rest of Botswana, we support customers remotely and through nationwide
               mobile technician support.
             </p>
           </div>
-          <div class="chapter-visual chapter-router visual-animate" aria-hidden="true">
-            <svg viewBox="0 0 520 360">
-              <path class="signal-line" d="M180 124a112 112 0 0 1 160 0"/>
-              <path class="signal-line delay-a" d="M136 86a176 176 0 0 1 248 0"/>
-              <path class="signal-line delay-b" d="M220 166a56 56 0 0 1 80 0"/>
-              <rect class="device-fill" x="154" y="206" width="212" height="76" rx="18"/>
-              <path class="visual-line" d="M190 206v-42M330 206v-42"/>
-              <circle class="visual-node" cx="260" cy="244" r="9"/>
-              <path class="dotted-line" d="M260 244C178 248 122 276 80 314M260 244c82-14 138-2 188 42"/>
-            </svg>
+          <div class="chapter-visual visual-animate">
+            <img
+              class="chapter-photo"
+              src="assets/images/chapter-network.png"
+              alt="Wi-Fi router and network cables being set up in a small office"
+              width="1600"
+              height="1200"
+              loading="lazy"
+              decoding="async"
+            >
           </div>
         </div>
       </section>
@@ -178,23 +189,23 @@
       <section class="chapter scene" aria-labelledby="chapter-build" data-bg="4">
         <div class="section-inner chapter-layout">
           <div class="chapter-copy">
-            <p class="chapter-number reveal">Chapter 04</p>
+            <p class="chapter-number reveal">Websites</p>
             <h2 id="chapter-build" class="split-heading reveal" data-splitting>We build.</h2>
             <p class="chapter-text reveal">
               Clean, mobile-friendly websites for local businesses, shops, service providers, schools,
               and organizations.
             </p>
           </div>
-          <div class="chapter-visual chapter-browser visual-animate" aria-hidden="true">
-            <svg viewBox="0 0 520 360">
-              <rect class="device-fill" x="78" y="66" width="364" height="228" rx="18"/>
-              <path class="screen-fill" d="M78 118h364"/>
-              <circle class="visual-node" cx="112" cy="92" r="6"/>
-              <circle class="visual-node" cx="136" cy="92" r="6"/>
-              <circle class="visual-node" cx="160" cy="92" r="6"/>
-              <path class="visual-line" d="M122 158h132M122 192h222M122 226h94"/>
-              <rect class="screen-fill" x="318" y="154" width="78" height="78" rx="12"/>
-            </svg>
+          <div class="chapter-visual visual-animate">
+            <img
+              class="chapter-photo"
+              src="assets/images/chapter-website.png"
+              alt="Web designer at a screen showing a clean business website mockup"
+              width="1600"
+              height="1200"
+              loading="lazy"
+              decoding="async"
+            >
           </div>
         </div>
       </section>
@@ -210,56 +221,85 @@
 
           <div class="service-scenes" aria-label="Visual service scenes">
             <article class="service-scene visual-animate">
-              <div class="scene-illustration cctv-scene" aria-hidden="true">
-                <span class="camera-shape"></span>
-                <span class="dvr-shape"></span>
-                <span class="phone-shape"></span>
+              <div class="scene-illustration scene-photo">
+                <img
+                  src="assets/images/chapter-cctv.png"
+                  alt="CCTV camera and recorder installation for shop security"
+                  width="800"
+                  height="600"
+                  loading="lazy"
+                  decoding="async"
+                >
               </div>
               <h3>CCTV camera installation</h3>
               <p>Camera, recorder, and mobile viewing setup as one clear security system.</p>
             </article>
             <article class="service-scene visual-animate">
-              <div class="scene-illustration pos-scene" aria-hidden="true">
-                <span class="terminal-shape"></span>
-                <span class="receipt-shape"></span>
-                <span class="pay-screen-shape"></span>
+              <div class="scene-illustration scene-photo">
+                <img
+                  src="assets/images/service-pos.png"
+                  alt="POS terminal and receipt printer on a shop counter"
+                  width="800"
+                  height="600"
+                  loading="lazy"
+                  decoding="async"
+                >
               </div>
               <h3>POS systems</h3>
               <p>Checkout equipment, receipts, payment flow, and everyday retail support.</p>
             </article>
             <article class="service-scene visual-animate">
-              <div class="scene-illustration website-scene" aria-hidden="true">
-                <span class="browser-shape"></span>
-                <span class="layout-line a"></span>
-                <span class="layout-line b"></span>
-                <span class="layout-card"></span>
+              <div class="scene-illustration scene-photo">
+                <img
+                  src="assets/images/chapter-website.png"
+                  alt="Clean business website design on a computer screen"
+                  width="800"
+                  height="600"
+                  loading="lazy"
+                  decoding="async"
+                >
               </div>
               <h3>Website design</h3>
               <p>Editorial, mobile-friendly websites that make local businesses easier to trust.</p>
             </article>
             <article class="service-scene visual-animate">
-              <div class="scene-illustration repair-scene" aria-hidden="true">
-                <span class="laptop-shape"></span>
-                <span class="tool-shape"></span>
-                <span class="chip-shape"></span>
+              <div class="scene-illustration scene-photo">
+                <img
+                  src="assets/images/chapter-fix.png"
+                  alt="Laptop repair and diagnostics at a technician workbench"
+                  width="800"
+                  height="600"
+                  loading="lazy"
+                  decoding="async"
+                >
               </div>
               <h3>Computer repairs</h3>
               <p>Diagnostics and repair work for laptops, slow systems, and software faults.</p>
             </article>
             <article class="service-scene visual-animate">
-              <div class="scene-illustration network-scene" aria-hidden="true">
-                <span class="router-shape"></span>
-                <span class="wave one"></span>
-                <span class="wave two"></span>
-                <span class="wave three"></span>
+              <div class="scene-illustration scene-photo">
+                <img
+                  src="assets/images/chapter-network.png"
+                  alt="Router and Wi-Fi network setup in a small office"
+                  width="800"
+                  height="600"
+                  loading="lazy"
+                  decoding="async"
+                >
               </div>
               <h3>Wi-Fi & networking</h3>
               <p>Coverage, routers, cabling, and small office networks that stay connected.</p>
             </article>
             <article class="service-scene visual-animate">
-              <div class="scene-illustration map-mini-scene" aria-hidden="true">
-                <img src="assets/BW-Mahalapye-transparent.png" alt="">
-                <span class="mini-route"></span>
+              <div class="scene-illustration scene-photo">
+                <img
+                  src="assets/images/botswana-map.png"
+                  alt="Map of Botswana with Mahalapye as the support origin"
+                  width="800"
+                  height="600"
+                  loading="lazy"
+                  decoding="async"
+                >
               </div>
               <h3>Nationwide support</h3>
               <p>Mahalapye as the base, with remote and mobile support across Botswana.</p>
@@ -349,21 +389,14 @@
 
           <div class="map-visual reveal" aria-label="Botswana map showing Mahalapye as the support origin">
             <div class="map-frame">
-              <img src="assets/BW-Mahalapye-transparent.png" alt="Map of Botswana with Mahalapye marked">
-              <svg class="map-routes" viewBox="0 0 530 527" aria-hidden="true">
-                <path class="map-line line-a" d="M380 312 C326 254 255 210 170 162"/>
-                <path class="map-line line-b" d="M380 312 C430 260 468 230 514 219"/>
-                <path class="map-line line-c" d="M380 312 C420 360 452 398 494 430"/>
-                <path class="map-line line-d" d="M380 312 C333 382 283 438 223 492"/>
-                <path class="map-line line-e" d="M380 312 C275 320 174 348 66 391"/>
-                <circle class="origin-pulse" cx="380" cy="312" r="13"/>
-                <circle class="origin-core" cx="380" cy="312" r="6"/>
-                <circle class="map-node" cx="170" cy="162" r="5"/>
-                <circle class="map-node" cx="514" cy="219" r="5"/>
-                <circle class="map-node" cx="494" cy="430" r="5"/>
-                <circle class="map-node" cx="223" cy="492" r="5"/>
-                <circle class="map-node" cx="66" cy="391" r="5"/>
-              </svg>
+              <img
+                src="assets/images/botswana-map.png"
+                alt="Map of Botswana with Mahalapye marked as the support origin"
+                width="1600"
+                height="1200"
+                loading="lazy"
+                decoding="async"
+              >
               <span class="map-label map-origin">Mahalapye</span>
             </div>
           </div>

@@ -1,0 +1,27 @@
+{
+  "name": "TechLab Botswana",
+  "register": "brand",
+  "colors": {
+    "ground": "oklch(12% 0.012 195)",
+    "ground-deep": "oklch(8% 0.01 195)",
+    "surface": "oklch(16% 0.014 195)",
+    "surface-raised": "oklch(20% 0.016 195)",
+    "ink": "oklch(96% 0.008 195)",
+    "ink-muted": "oklch(78% 0.012 195)",
+    "ink-faint": "oklch(65% 0.014 195)",
+    "accent-green": "oklch(68% 0.16 155)",
+    "accent-green-deep": "oklch(52% 0.14 155)",
+    "accent-gold": "oklch(78% 0.1 85)",
+    "accent-blue": "oklch(72% 0.1 240)",
+    "line": "oklch(96% 0.008 195 / 0.14)",
+    "line-strong": "oklch(68% 0.16 155 / 0.4)"
+  },
+  "typography": {
+    "display": "Epilogue, system-ui, sans-serif",
+    "body": "Source Serif 4, Georgia, serif"
+  },
+  "imagery": {
+    "style": "documentary tech photography",
+    "context": "Southern African workshop and install scenes"
+  }
+}

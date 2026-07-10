@@ -1,22 +1,21 @@
 :root {
-  --ink: #f7fbff;
-  --paper: #061116;
-  --panel: rgba(9, 24, 30, 0.68);
-  --panel-strong: rgba(247, 251, 255, 0.94);
-  --line: rgba(247, 251, 255, 0.16);
-  --muted: rgba(226, 238, 242, 0.72);
-  --dark-muted: #516069;
-  --green: #20c078;
-  --green-deep: #138a59;
-  --blue: #66a6ff;
-  --gold: #d9b56f;
-  --coral: #ff8b72;
-  --purple: #8f7cff;
+  --ink: oklch(96% 0.008 195);
+  --paper: oklch(12% 0.012 195);
+  --panel: oklch(16% 0.014 195 / 0.68);
+  --panel-strong: oklch(96% 0.008 195 / 0.94);
+  --line: oklch(96% 0.008 195 / 0.14);
+  --muted: oklch(82% 0.012 195);
+  --dark-muted: oklch(38% 0.016 195);
+  --green: oklch(68% 0.16 155);
+  --green-deep: oklch(52% 0.14 155);
+  --blue: oklch(72% 0.1 240);
+  --gold: oklch(78% 0.1 85);
+  --coral: oklch(72% 0.14 35);
   --radius: 8px;
   --header-height: 76px;
   color: var(--ink);
   background: var(--paper);
-  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: "Source Serif 4", Georgia, serif;
 }
 
 * {
@@ -47,9 +46,9 @@ body::before {
   z-index: -2;
   content: "";
   background:
-    radial-gradient(circle at 15% 20%, rgba(32, 192, 120, 0.18), transparent 34%),
-    radial-gradient(circle at 86% 18%, rgba(102, 166, 255, 0.18), transparent 33%),
-    linear-gradient(135deg, #07171a 0%, #07131e 48%, #121715 100%);
+    radial-gradient(circle at 15% 20%, oklch(68% 0.16 155 / 0.14), transparent 34%),
+    radial-gradient(circle at 86% 18%, oklch(72% 0.1 240 / 0.12), transparent 33%),
+    linear-gradient(135deg, oklch(10% 0.012 195) 0%, oklch(11% 0.014 195) 48%, oklch(14% 0.012 180) 100%);
 }
 
 a {
@@ -159,13 +158,14 @@ svg {
   display: grid;
   gap: 2px;
   min-width: 0;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
 }
 
 .brand-name,
 .logo-lockup span {
   color: #ffffff;
+  font-family: Epilogue, system-ui, sans-serif;
   font-size: 0.88rem;
   font-weight: 800;
 }
@@ -268,8 +268,8 @@ svg {
 .chapter[data-bg="3"],
 .nationwide[data-bg="3"] {
   --scene-glow:
-    radial-gradient(circle at 76% 46%, rgba(143, 124, 255, 0.2), transparent 36%),
-    linear-gradient(135deg, rgba(19, 18, 58, 0.42), transparent 58%);
+    radial-gradient(circle at 76% 46%, oklch(72% 0.1 240 / 0.16), transparent 36%),
+    linear-gradient(135deg, oklch(14% 0.014 195 / 0.42), transparent 58%);
 }
 
 .chapter[data-bg="4"],
@@ -285,6 +285,32 @@ svg {
   min-height: 100svh;
   padding-top: var(--header-height);
   overflow: hidden;
+}
+
+.hero-media {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.hero-media::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background:
+    linear-gradient(180deg, oklch(12% 0.012 195 / 0.55) 0%, oklch(12% 0.012 195 / 0.72) 45%, oklch(8% 0.01 195 / 0.88) 100%),
+    linear-gradient(90deg, oklch(8% 0.01 195 / 0.7) 0%, transparent 55%);
+  pointer-events: none;
+}
+
+.hero-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 35%;
+  transform: scale(1.02);
+  will-change: transform;
 }
 
 .hero::after,
@@ -414,27 +440,31 @@ h3 {
 
 h1,
 h2 {
-  font-family: "Playfair Display", Georgia, serif;
+  font-family: Epilogue, system-ui, sans-serif;
   font-weight: 700;
-  line-height: 0.98;
+  line-height: 1.02;
+  text-wrap: balance;
 }
 
 h1 {
   width: min(960px, 100%);
   margin-top: 28px;
   color: #ffffff;
-  font-size: clamp(3rem, 7.2vw, 6.9rem);
+  font-size: clamp(2.8rem, 6.5vw, 5.6rem);
+  letter-spacing: -0.02em;
 }
 
 h2 {
   color: #ffffff;
-  font-size: clamp(2.5rem, 6vw, 6rem);
+  font-size: clamp(2.2rem, 5.2vw, 4.8rem);
+  letter-spacing: -0.015em;
 }
 
 h3 {
+  font-family: Epilogue, system-ui, sans-serif;
   color: #081317;
   font-size: 1.04rem;
-  font-weight: 800;
+  font-weight: 700;
   line-height: 1.18;
 }
 
@@ -447,6 +477,7 @@ h3 {
   margin: 28px 0 0;
   color: var(--muted);
   font-size: clamp(1rem, 1.6vw, 1.24rem);
+  text-wrap: pretty;
 }
 
 .hero-actions,
@@ -467,7 +498,8 @@ h3 {
   border: 1px solid transparent;
   border-radius: 999px;
   cursor: pointer;
-  font-weight: 800;
+  font-family: Epilogue, system-ui, sans-serif;
+  font-weight: 700;
   line-height: 1.1;
   transition: transform 180ms ease, background 180ms ease, border-color 180ms ease, color 180ms ease;
 }
@@ -522,9 +554,10 @@ h3 {
   justify-items: center;
   gap: 8px;
   color: rgba(255, 255, 255, 0.7);
+  font-family: Epilogue, system-ui, sans-serif;
   font-size: 0.72rem;
-  font-weight: 800;
-  letter-spacing: 0.16em;
+  font-weight: 600;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
@@ -565,9 +598,10 @@ h3 {
 .chapter-number {
   margin: 0;
   color: var(--gold);
-  font-size: 0.78rem;
-  font-weight: 800;
-  letter-spacing: 0.18em;
+  font-family: Epilogue, system-ui, sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
 }
 
@@ -601,14 +635,27 @@ h3 {
 
 .chapter-visual::before {
   position: absolute;
-  inset: -20%;
+  inset: 0;
+  z-index: 1;
   content: "";
-  background:
-    linear-gradient(rgba(255, 255, 255, 0.055) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
-  background-size: 36px 36px;
-  opacity: 0.5;
-  animation: grid-drift 18s linear infinite;
+  background: linear-gradient(180deg, transparent 55%, oklch(8% 0.01 195 / 0.35) 100%);
+  pointer-events: none;
+}
+
+.chapter-photo {
+  position: relative;
+  z-index: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 360px;
+  object-fit: cover;
+  object-position: center;
+  will-change: transform;
+}
+
+.chapter:nth-child(odd) .chapter-photo {
+  object-position: center 30%;
 }
 
 .chapter-visual svg {
@@ -723,15 +770,19 @@ h3 {
   min-height: 170px;
   overflow: hidden;
   border-radius: var(--radius);
-  background:
-    linear-gradient(rgba(255, 255, 255, 0.055) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px),
-    rgba(255, 255, 255, 0.045);
-  background-size: 30px 30px;
+  background: oklch(16% 0.014 195 / 0.6);
 }
 
-.scene-illustration span,
-.scene-illustration img {
+.scene-photo img {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.scene-illustration span {
   position: absolute;
   display: block;
 }
@@ -962,6 +1013,11 @@ h3 {
 .service-card {
   position: relative;
   isolation: isolate;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto auto;
+  column-gap: 14px;
+  row-gap: 10px;
   min-height: 248px;
   padding: 24px;
   border: 1px solid rgba(255, 255, 255, 0.16);
@@ -971,6 +1027,11 @@ h3 {
   box-shadow: 0 24px 80px rgba(0, 0, 0, 0.18);
   transform-style: preserve-3d;
   transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
+}
+
+.service-card h3 {
+  align-self: center;
+  margin: 0;
 }
 
 .service-card::before {
@@ -997,13 +1058,13 @@ h3 {
 .service-icon {
   display: grid;
   place-items: center;
-  width: 48px;
-  height: 48px;
-  margin-bottom: 22px;
-  border: 1px solid rgba(8, 19, 23, 0.12);
-  border-radius: var(--radius);
+  width: 40px;
+  height: 40px;
+  margin: 0;
+  border: none;
+  border-radius: 0;
   color: #0f6c80;
-  background: #eef8f6;
+  background: transparent;
 }
 
 .service-icon svg {
@@ -1017,7 +1078,8 @@ h3 {
 }
 
 .service-card p {
-  margin: 12px 0 0;
+  grid-column: 1 / -1;
+  margin: 0;
   color: var(--dark-muted);
   font-size: 0.96rem;
 }
@@ -1067,9 +1129,9 @@ h3 {
   z-index: 0;
   width: 100%;
   height: 100%;
-  object-fit: contain;
-  opacity: 0.86;
-  filter: drop-shadow(0 20px 38px rgba(0, 0, 0, 0.22));
+  object-fit: cover;
+  object-position: center;
+  opacity: 0.92;
 }
 
 .map-routes {
@@ -1121,16 +1183,17 @@ h3 {
 .map-label {
   position: absolute;
   z-index: 3;
-  top: 59%;
-  left: 72%;
+  top: 58%;
+  left: 54%;
   padding: 8px 12px;
   border: 1px solid rgba(255, 255, 255, 0.22);
   border-radius: 999px;
   color: #ffffff;
+  font-family: Epilogue, system-ui, sans-serif;
   background: rgba(5, 14, 18, 0.72);
   font-size: 0.78rem;
-  font-weight: 800;
-  transform: translate(8px, -50%);
+  font-weight: 600;
+  transform: translate(-50%, -50%);
 }
 
 .quote-form {
@@ -1165,9 +1228,10 @@ h3 {
 
 .contact-detail span {
   color: var(--gold);
+  font-family: Epilogue, system-ui, sans-serif;
   font-size: 0.76rem;
-  font-weight: 900;
-  letter-spacing: 0.14em;
+  font-weight: 600;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
 }
 
@@ -1249,14 +1313,14 @@ textarea:focus {
 
 .site-footer strong {
   color: #ffffff;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.04em;
 }
 
 .site-footer span {
-  color: rgba(247, 251, 255, 0.6);
+  color: rgba(247, 251, 255, 0.72);
   font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
+  font-weight: 600;
+  letter-spacing: 0.04em;
 }
 
 .site-footer p {
@@ -1437,6 +1501,10 @@ address {
     min-height: 300px;
   }
 
+  .chapter-photo {
+    min-height: 300px;
+  }
+
   .chapter-visual svg {
     min-height: 300px;
   }
@@ -1481,12 +1549,16 @@ address {
 
   h1 {
     font-size: clamp(2.28rem, 9.9vw, 2.9rem);
-    line-height: 1.04;
+    line-height: 1.06;
     max-width: 7.8em;
   }
 
   h2 {
-    font-size: clamp(2.28rem, 10.5vw, 3.5rem);
+    font-size: clamp(2.1rem, 9.5vw, 3.2rem);
+  }
+
+  .hero-photo {
+    object-position: center 40%;
   }
 
   .hero-orbit span:nth-child(1) {
@@ -1563,7 +1635,9 @@ address {
   }
 
   .map-label {
-    transform: translate(-4%, -126%);
+    top: 62%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 }
 
@@ -1575,6 +1649,12 @@ address {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+
+  .hero-photo,
+  .chapter-photo {
+    transform: none !important;
+    will-change: auto;
   }
 
   .reveal,

@@ -209,6 +209,7 @@ if (window.gsap && window.ScrollTrigger && !reducedMotion) {
 
   gsap.utils.toArray(".chapter").forEach((chapter) => {
     const visual = chapter.querySelector(".chapter-visual");
+    const photo = chapter.querySelector(".chapter-photo");
     const copy = chapter.querySelector(".chapter-copy");
 
     gsap.fromTo(
@@ -265,9 +266,52 @@ if (window.gsap && window.ScrollTrigger && !reducedMotion) {
         },
       });
     }
+
+    if (photo) {
+      gsap.fromTo(
+        photo,
+        { scale: 1.08, clipPath: "inset(6% 6% 6% 6%)" },
+        {
+          scale: 1,
+          clipPath: "inset(0% 0% 0% 0%)",
+          duration: 1.1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: chapter,
+            start: "top 75%",
+          },
+        },
+      );
+
+      gsap.to(photo, {
+        y: isMobile ? 0 : -28,
+        scale: isMobile ? 1 : 1.04,
+        scrollTrigger: {
+          trigger: chapter,
+          start: "top bottom",
+          end: "bottom top",
+          scrub: true,
+        },
+      });
+    }
   });
 
+  const heroPhoto = document.querySelector(".hero-photo");
+  if (heroPhoto) {
+    gsap.to(heroPhoto, {
+      scale: 1.1,
+      y: isMobile ? 0 : -40,
+      scrollTrigger: {
+        trigger: ".hero",
+        start: "top top",
+        end: "bottom top",
+        scrub: true,
+      },
+    });
+  }
+
   gsap.utils.toArray(".visual-animate").forEach((visual, index) => {
+    const photo = visual.querySelector("img");
     gsap.fromTo(
       visual,
       { y: 72, opacity: 0, scale: 0.96 },
@@ -284,6 +328,22 @@ if (window.gsap && window.ScrollTrigger && !reducedMotion) {
         },
       },
     );
+
+    if (photo) {
+      gsap.fromTo(
+        photo,
+        { scale: 1.06 },
+        {
+          scale: 1,
+          duration: 1.05,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: visual,
+            start: "top 86%",
+          },
+        },
+      );
+    }
   });
 
   gsap.utils.toArray(".service-card").forEach((card, index) => {
@@ -352,10 +412,10 @@ function initPaintedBackground() {
 
   const palettes = [
     [0.02, 0.09, 0.1, 0.05, 0.28, 0.22, 0.18, 0.46, 0.5],
-    [0.03, 0.12, 0.16, 0.07, 0.34, 0.32, 0.72, 0.44, 0.28],
-    [0.03, 0.1, 0.14, 0.26, 0.16, 0.38, 0.82, 0.56, 0.24],
-    [0.02, 0.13, 0.12, 0.32, 0.25, 0.08, 0.24, 0.62, 0.48],
-    [0.07, 0.08, 0.09, 0.36, 0.18, 0.14, 0.86, 0.54, 0.34],
+    [0.03, 0.12, 0.16, 0.07, 0.34, 0.32, 0.55, 0.44, 0.28],
+    [0.03, 0.1, 0.14, 0.22, 0.16, 0.38, 0.62, 0.56, 0.24],
+    [0.02, 0.13, 0.12, 0.28, 0.25, 0.08, 0.24, 0.58, 0.48],
+    [0.07, 0.08, 0.09, 0.32, 0.18, 0.14, 0.72, 0.54, 0.34],
   ];
 
   const uniforms = {
