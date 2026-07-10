@@ -7,6 +7,17 @@ const quoteForm = document.querySelector("#quote-form");
 const formStatus = document.querySelector("#form-status");
 const quoteSubmitButton = quoteForm?.querySelector('button[type="submit"]');
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+function revealContentFallback() {
+  document.querySelectorAll(".reveal, .hero-reveal").forEach((element) => {
+    element.style.opacity = "1";
+    element.style.transform = "none";
+  });
+}
+
+if (reducedMotion) {
+  revealContentFallback();
+}
 const isMobile = window.matchMedia("(max-width: 640px)").matches;
 const supabaseConfig = window.TECHLAB_SUPABASE ?? null;
 const supabaseClient =
@@ -64,10 +75,10 @@ quoteForm?.addEventListener("submit", (event) => {
 });
 
 async function submitQuote(details) {
-  setFormPending(true, supabaseClient ? "Sending your request..." : "Supabase key missing. Opening WhatsApp instead...");
+  setFormPending(true, "Sending your request...");
 
   if (!supabaseClient) {
-    openWhatsappFallback(details, "Supabase key missing. Opening WhatsApp instead...");
+    openWhatsappFallback(details, "Opening WhatsApp with your request...");
     return;
   }
 
@@ -81,12 +92,12 @@ async function submitQuote(details) {
   });
 
   if (error) {
-    openWhatsappFallback(details, "Supabase submit failed. Opening WhatsApp instead...");
+    openWhatsappFallback(details, "Opening WhatsApp with your request...");
     return;
   }
 
   quoteForm?.reset();
-  setFormPending(false, "Quote request sent. TechLab Botswana will follow up soon.");
+  setFormPending(false, "Request sent. TechLab Botswana will follow up soon.");
 }
 
 function openWhatsappFallback(details, statusMessage) {
@@ -109,15 +120,18 @@ function setFormPending(isPending, message) {
   if (quoteSubmitButton) {
     quoteSubmitButton.disabled = isPending;
     quoteSubmitButton.textContent = isPending ? "Sending..." : "Send Request";
-    if (!isPending) {
-      quoteSubmitButton.textContent = "Send Request";
-    }
   }
 
   if (formStatus) {
     formStatus.textContent = message;
   }
 }
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && document.body.classList.contains("nav-open")) {
+    setMenu(false);
+  }
+});
 
 if (window.Splitting) {
   Splitting();
@@ -364,8 +378,8 @@ if (window.gsap && window.ScrollTrigger && !reducedMotion) {
     );
   });
 
-  gsap.to(".map-frame", {
-    y: isMobile ? 0 : -26,
+  gsap.to(".map-stage", {
+    y: isMobile ? 0 : -18,
     scrollTrigger: {
       trigger: ".nationwide",
       start: "top bottom",
@@ -386,9 +400,7 @@ if (window.gsap && window.ScrollTrigger && !reducedMotion) {
     },
   });
 } else {
-  document.querySelectorAll(".reveal, .hero-reveal").forEach((element) => {
-    element.style.opacity = "1";
-  });
+  revealContentFallback();
 }
 
 function initPaintedBackground() {
@@ -409,7 +421,7 @@ function initPaintedBackground() {
   const geometry = new THREE.PlaneGeometry(2, 2, 1, 1);
   const pointer = new THREE.Vector2(0.5, 0.5);
 
-  const palettes = [
+  const darkPalettes = [
     [0.02, 0.09, 0.1, 0.05, 0.28, 0.22, 0.18, 0.46, 0.5],
     [0.03, 0.12, 0.16, 0.07, 0.34, 0.32, 0.55, 0.44, 0.28],
     [0.03, 0.1, 0.14, 0.22, 0.16, 0.38, 0.62, 0.56, 0.24],
@@ -417,12 +429,24 @@ function initPaintedBackground() {
     [0.07, 0.08, 0.09, 0.32, 0.18, 0.14, 0.72, 0.54, 0.34],
   ];
 
+  const lightPalettes = [
+    [0.96, 0.98, 0.97, 0.88, 0.95, 0.92, 0.78, 0.9, 0.88],
+    [0.97, 0.98, 0.99, 0.9, 0.94, 0.96, 0.82, 0.9, 0.86],
+    [0.96, 0.98, 0.97, 0.9, 0.93, 0.9, 0.84, 0.92, 0.82],
+    [0.98, 0.97, 0.95, 0.92, 0.94, 0.88, 0.86, 0.91, 0.84],
+    [0.97, 0.97, 0.96, 0.93, 0.92, 0.88, 0.88, 0.9, 0.82],
+  ];
+
+  const themeQuery = window.matchMedia("(prefers-color-scheme: dark)");
+  let palettes = themeQuery.matches ? darkPalettes : lightPalettes;
+
   const uniforms = {
     uTime: { value: 0 },
     uScroll: { value: 0 },
     uPointer: { value: pointer },
     uResolution: { value: new THREE.Vector2(1, 1) },
     uPalette: { value: palettes[0] },
+    uDark: { value: themeQuery.matches ? 1 : 0 },
   };
 
   const material = new THREE.ShaderMaterial({
@@ -439,6 +463,7 @@ function initPaintedBackground() {
       uniform vec2 uPointer;
       uniform vec2 uResolution;
       uniform float uPalette[9];
+      uniform float uDark;
 
       mat2 rotate2d(float angle) {
         float s = sin(angle);
@@ -489,9 +514,9 @@ function initPaintedBackground() {
 
         vec3 color = mix(c1, c2, smoothstep(0.2, 0.95, brush));
         color = mix(color, c3, smoothstep(0.45, 0.92, fbm(p * 3.2 + brush + uScroll)));
-        color += cursor * vec3(0.08, 0.12, 0.1);
-        color += (grain - 0.5) * 0.065;
-        color *= 0.92 - length(p) * 0.18;
+        color += cursor * mix(vec3(0.04, 0.08, 0.06), vec3(0.08, 0.12, 0.1), uDark);
+        color += (grain - 0.5) * mix(0.03, 0.065, uDark);
+        color *= mix(1.0, 0.92 - length(p) * 0.18, uDark);
 
         gl_FragColor = vec4(color, 1.0);
       }
@@ -517,6 +542,19 @@ function initPaintedBackground() {
     uniforms.uPalette.value = palettes[index].map((value, channel) => {
       return value + (palettes[index + 1][channel] - value) * mixValue;
     });
+  }
+
+  function syncTheme(event) {
+    const isDark = event && "matches" in event ? event.matches : themeQuery.matches;
+    palettes = isDark ? darkPalettes : lightPalettes;
+    uniforms.uDark.value = isDark ? 1 : 0;
+    updatePalette();
+  }
+
+  if (typeof themeQuery.addEventListener === "function") {
+    themeQuery.addEventListener("change", syncTheme);
+  } else if (typeof themeQuery.addListener === "function") {
+    themeQuery.addListener(syncTheme);
   }
 
   window.addEventListener("resize", resize);
