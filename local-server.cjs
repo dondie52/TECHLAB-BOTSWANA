@@ -12,7 +12,11 @@ const contentTypes = {
   ".js": "text/javascript; charset=utf-8",
   ".png": "image/png",
   ".webp": "image/webp",
+  ".jpg": "image/jpeg",
+  ".jpeg": "image/jpeg",
   ".svg": "image/svg+xml",
+  ".mp4": "video/mp4",
+  ".webm": "video/webm",
 };
 
 const server = http.createServer((req, res) => {

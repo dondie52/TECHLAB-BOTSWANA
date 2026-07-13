@@ -1,0 +1,85 @@
+{
+  "generatedAt": "2026-07-13T12:59:41.846Z",
+  "sites": [
+    {
+      "id": "lmhts",
+      "title": "LMHTS Botswana",
+      "desktop": {
+        "w": 1440,
+        "h": 900,
+        "webpBytes": 39084,
+        "pngBytes": 78179
+      },
+      "mobile": {
+        "w": 780,
+        "h": 1688,
+        "webpBytes": 50958,
+        "pngBytes": 109806
+      }
+    },
+    {
+      "id": "water",
+      "title": "Fresh Water Market",
+      "desktop": {
+        "w": 1440,
+        "h": 900,
+        "webpBytes": 96446,
+        "pngBytes": 415245
+      },
+      "mobile": {
+        "w": 780,
+        "h": 1688,
+        "webpBytes": 79840,
+        "pngBytes": 216646
+      }
+    },
+    {
+      "id": "props",
+      "title": "PropManage BW",
+      "desktop": {
+        "w": 1440,
+        "h": 900,
+        "webpBytes": 85866,
+        "pngBytes": 387750
+      },
+      "mobile": {
+        "w": 780,
+        "h": 1688,
+        "webpBytes": 107316,
+        "pngBytes": 460233
+      }
+    },
+    {
+      "id": "cxow",
+      "title": "Livestock Connect",
+      "desktop": {
+        "w": 1440,
+        "h": 900,
+        "webpBytes": 47936,
+        "pngBytes": 250534
+      },
+      "mobile": {
+        "w": 780,
+        "h": 1688,
+        "webpBytes": 69722,
+        "pngBytes": 422722
+      }
+    },
+    {
+      "id": "bank",
+      "title": "Typo Cash Solutions",
+      "desktop": {
+        "w": 1440,
+        "h": 900,
+        "webpBytes": 54096,
+        "pngBytes": 498871
+      },
+      "mobile": {
+        "w": 780,
+        "h": 1688,
+        "webpBytes": 78372,
+        "pngBytes": 559614
+      }
+    }
+  ]
+}

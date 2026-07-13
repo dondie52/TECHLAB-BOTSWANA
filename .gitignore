@@ -5,6 +5,13 @@ supabase/.temp/
 node_modules/
 package-lock.json
 
+# Large Higgsfield intermediates (compressed web assets are committed)
+assets/services/**/*-source.mp4
+assets/services/**/*.png
+assets/services/websites/*-desktop.png
+assets/services/websites/*-mobile.png
+assets/services/websites/_previous/
+
 # impeccable-ignore-start
 .impeccable/config.local.json
 .impeccable/hook.cache.json
