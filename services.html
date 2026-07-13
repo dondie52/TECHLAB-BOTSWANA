@@ -26,14 +26,13 @@
     >
     <meta name="twitter:image" content="https://dondie52.github.io/TECHLAB-BOTSWANA/assets/services/hero/services-hero.webp">
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
     <link
       rel="preload"
       as="image"
-      href="assets/services/hero/services-hero.webp"
+      href="assets/services/hero/services-hero-mobile.webp"
       type="image/webp"
+      imagesrcset="assets/services/hero/services-hero-mobile.webp 700w, assets/services/hero/services-hero.webp 1376w"
+      imagesizes="(max-width: 700px) calc(100vw - 40px), min(52vw, 650px)"
       fetchpriority="high"
     >
     <link rel="stylesheet" href="styles.css">
@@ -95,6 +94,8 @@
               <img
                 class="svc-hero-poster"
                 src="assets/services/hero/services-hero.webp"
+                srcset="assets/services/hero/services-hero-mobile.webp 700w, assets/services/hero/services-hero.webp 1376w"
+                sizes="(max-width: 700px) calc(100vw - 40px), min(52vw, 650px)"
                 alt=""
                 width="1376"
                 height="768"
@@ -108,7 +109,6 @@
               muted
               playsinline
               preload="none"
-              poster="assets/services/hero/services-hero.webp"
             >
               <source data-src="assets/services/hero/services-hero.webm" type="video/webm">
               <source data-src="assets/services/hero/services-hero.mp4" type="video/mp4">
@@ -201,6 +201,8 @@
                 <img
                   class="svc-pin-poster"
                   src="assets/services/cctv/cctv-product.webp"
+                  srcset="assets/services/cctv/cctv-product-mobile.webp 700w, assets/services/cctv/cctv-product.webp 1376w"
+                  sizes="100vw"
                   alt=""
                   width="1376"
                   height="768"
@@ -214,7 +216,6 @@
                 muted
                 playsinline
                 preload="none"
-                poster="assets/services/cctv/cctv-product.webp"
               >
                 <source data-src="assets/services/cctv/cctv-orbit.webm" type="video/webm">
                 <source data-src="assets/services/cctv/cctv-orbit.mp4" type="video/mp4">
@@ -290,6 +291,8 @@
                 <img
                   class="svc-pin-poster"
                   src="assets/services/pos/pos-product.webp"
+                  srcset="assets/services/pos/pos-product-mobile.webp 700w, assets/services/pos/pos-product.webp 1376w"
+                  sizes="100vw"
                   alt=""
                   width="1376"
                   height="768"
@@ -303,7 +306,6 @@
                 muted
                 playsinline
                 preload="none"
-                poster="assets/services/pos/pos-product.webp"
               >
                 <source data-src="assets/services/pos/pos-assembly.webm" type="video/webm">
                 <source data-src="assets/services/pos/pos-assembly.mp4" type="video/mp4">
@@ -710,7 +712,7 @@
                   <path class="svc-line" data-line="backup" d="M320 210 L320 290"></path>
                   <path class="svc-line" data-line="support" d="M420 210 L480 290"></path>
                 </g>
-                <g class="svc-diagram-nodes" font-family="Epilogue, sans-serif">
+                <g class="svc-diagram-nodes" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
                   <g class="svc-node" data-node="internet" transform="translate(70 40)">
                     <rect width="100" height="44" rx="4"></rect>
                     <text x="50" y="27" text-anchor="middle">Internet</text>
@@ -974,8 +976,6 @@
         ]
       }
     </script>
-    <script src="https://unpkg.com/gsap@3.12.5/dist/gsap.min.js" defer></script>
-    <script src="https://unpkg.com/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
     <script src="services.js" defer></script>
   </body>
 </html>
