@@ -180,14 +180,26 @@ document.addEventListener("keydown", (event) => {
 if (window.gsap && window.ScrollTrigger && !reducedMotion) {
   gsap.registerPlugin(ScrollTrigger);
 
-  gsap.set(".hero-reveal", { y: 28, opacity: 0 });
-  gsap.to(".hero-reveal", {
-    y: 0,
-    opacity: 1,
-    duration: 0.9,
-    stagger: 0.1,
-    ease: "power3.out",
-  });
+  const reverseOnLeave = {
+    toggleActions: "play none none reverse",
+  };
+
+  gsap.fromTo(
+    ".hero-reveal",
+    { y: 28, opacity: 0 },
+    {
+      y: 0,
+      opacity: 1,
+      duration: 0.9,
+      stagger: 0.1,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: ".hero",
+        start: "top 80%",
+        ...reverseOnLeave,
+      },
+    },
+  );
 
   gsap.utils.toArray(".reveal").forEach((element) => {
     gsap.fromTo(
@@ -201,6 +213,7 @@ if (window.gsap && window.ScrollTrigger && !reducedMotion) {
         scrollTrigger: {
           trigger: element,
           start: "top 86%",
+          ...reverseOnLeave,
         },
       },
     );
@@ -209,6 +222,7 @@ if (window.gsap && window.ScrollTrigger && !reducedMotion) {
   gsap.utils.toArray(".chapter").forEach((chapter) => {
     const visual = chapter.querySelector(".chapter-visual");
     const copy = chapter.querySelector(".chapter-copy");
+    const photo = chapter.querySelector(".chapter-photo");
 
     if (visual) {
       gsap.fromTo(
@@ -222,6 +236,7 @@ if (window.gsap && window.ScrollTrigger && !reducedMotion) {
           scrollTrigger: {
             trigger: chapter,
             start: "top 78%",
+            ...reverseOnLeave,
           },
         },
       );
@@ -239,6 +254,24 @@ if (window.gsap && window.ScrollTrigger && !reducedMotion) {
           scrollTrigger: {
             trigger: chapter,
             start: "top 78%",
+            ...reverseOnLeave,
+          },
+        },
+      );
+    }
+
+    if (photo) {
+      gsap.fromTo(
+        photo,
+        { scale: 1.08 },
+        {
+          scale: 1,
+          ease: "none",
+          scrollTrigger: {
+            trigger: chapter,
+            start: "top bottom",
+            end: "bottom top",
+            scrub: true,
           },
         },
       );
@@ -258,6 +291,7 @@ if (window.gsap && window.ScrollTrigger && !reducedMotion) {
         scrollTrigger: {
           trigger: visual,
           start: "top 88%",
+          ...reverseOnLeave,
         },
       },
     );
@@ -276,22 +310,43 @@ if (window.gsap && window.ScrollTrigger && !reducedMotion) {
         scrollTrigger: {
           trigger: card,
           start: "top 92%",
+          ...reverseOnLeave,
         },
       },
     );
   });
 
-  gsap.from(".contact-detail", {
-    y: 24,
-    opacity: 0,
-    duration: 0.65,
-    stagger: 0.07,
-    ease: "power3.out",
-    scrollTrigger: {
-      trigger: ".contact-panel",
-      start: "top 86%",
+  gsap.fromTo(
+    ".contact-detail",
+    { y: 24, opacity: 0 },
+    {
+      y: 0,
+      opacity: 1,
+      duration: 0.65,
+      stagger: 0.07,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: ".contact-panel",
+        start: "top 86%",
+        ...reverseOnLeave,
+      },
     },
-  });
+  );
+
+  gsap.fromTo(
+    ".hero-photo",
+    { scale: 1.06 },
+    {
+      scale: 1,
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".hero",
+        start: "top top",
+        end: "bottom top",
+        scrub: true,
+      },
+    },
+  );
 } else {
   revealContentFallback();
 }
