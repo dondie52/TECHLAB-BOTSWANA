@@ -155,7 +155,7 @@ function openWhatsappFallback(details, statusMessage) {
     `Message: ${details.message}`,
   ].join("\n");
 
-  const whatsappUrl = `https://wa.me/15559398213?text=${encodeURIComponent(message)}`;
+  const whatsappUrl = `https://wa.me/26776984827?text=${encodeURIComponent(message)}`;
   setFormPending(false, statusMessage);
   window.open(whatsappUrl, "_blank", "noopener");
 }
