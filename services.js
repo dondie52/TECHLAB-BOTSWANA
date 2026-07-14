@@ -120,7 +120,7 @@ function selectFinderOption(button) {
 
   finderLabel.textContent = entry.label;
   finderCopy.textContent = entry.copy;
-  finderWa.href = `https://wa.me/15559398213?text=${encodeURIComponent(entry.message)}`;
+  finderWa.href = `https://wa.me/26776984827?text=${encodeURIComponent(entry.message)}`;
   finderResult.hidden = false;
 
   const target = document.querySelector(entry.anchor);
