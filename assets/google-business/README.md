@@ -2,17 +2,11 @@
 
 Upload these files in **Photos and videos** on your Google Business Profile.
 
-| File | Use | Notes |
-|------|-----|--------|
-| `techlab-botswana-google-logo.jpg` | **Logo** | ~60 KB — best for iPhone upload |
-| `techlab-botswana-google-cover.jpg` | **Cover photo** | 16:9, ~130 KB |
-| `*.png` | Same artwork | Higher quality, larger files |
+| File | Use | Size |
+|------|-----|------|
+| `techlab-botswana-google-logo.png` | **Logo** | 1024×1024 (square) |
+| `techlab-botswana-google-cover-16x9.png` | **Cover photo** | 1536×864 (16:9) |
 
-**Download on your phone (tap, long-press, Save Image):**
-
-- Logo: https://dondie52.github.io/TECHLAB-BOTSWANA/assets/google-business/techlab-botswana-google-logo.jpg
-- Cover: https://dondie52.github.io/TECHLAB-BOTSWANA/assets/google-business/techlab-botswana-google-cover.jpg
-
-If Google shows **Waiting for upload…** for a long time: use the **.jpg** files, switch to Wi‑Fi, or save from the links above to Photos and upload from there (not from iCloud “loading” thumbnails).
+Google accepts JPG or PNG. Keep the logo square with important content centered (Google may crop to a circle in some views).
 
 Brand: TechLab Botswana — IT, CCTV, POS, websites. Mahalapye base, nationwide support.
