@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TechLab Botswana — WhatsApp Poster</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --ink: #0b1a1c;
+        --green: #0d7a55;
+        --paper: #f7faf9;
+      }
+
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+
+      body {
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        gap: 24px;
+        padding: 24px;
+        background: #1a2222;
+        font-family: Epilogue, system-ui, sans-serif;
+        color: var(--paper);
+      }
+
+      .toolbar {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        justify-content: center;
+        max-width: 1080px;
+      }
+
+      .toolbar a {
+        border-radius: 999px;
+        padding: 12px 18px;
+        background: var(--green);
+        color: white;
+        font: 600 0.95rem/1 Epilogue, system-ui, sans-serif;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      .toolbar a.secondary {
+        background: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.35);
+      }
+
+      .preview {
+        width: min(100vw - 32px, 540px);
+        display: grid;
+        gap: 16px;
+      }
+
+      .preview img {
+        width: 100%;
+        height: auto;
+        border-radius: 12px;
+        box-shadow: 0 24px 80px rgba(0, 0, 0, 0.45);
+        background: var(--ink);
+      }
+
+      .preview figcaption {
+        text-align: center;
+        font-size: 0.9rem;
+        color: rgba(247, 250, 249, 0.72);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="toolbar">
+      <a href="techlab-botswana-whatsapp-poster.jpg" download>Download square JPG</a>
+      <a href="techlab-botswana-whatsapp-status.jpg" download>Download status JPG</a>
+      <a class="secondary" href="techlab-botswana-whatsapp-poster.png" download>Square PNG</a>
+      <a class="secondary" href="techlab-botswana-whatsapp-status.png" download>Status PNG</a>
+    </div>
+
+    <figure class="preview">
+      <img
+        src="techlab-botswana-whatsapp-poster.jpg"
+        alt="TechLab Botswana WhatsApp poster — Technology support for Botswana. WhatsApp +267 76 984 827"
+        width="1080"
+        height="1080"
+      >
+      <figcaption>Square poster (1080×1080) — best for WhatsApp chats</figcaption>
+    </figure>
+
+    <figure class="preview">
+      <img
+        src="techlab-botswana-whatsapp-status.jpg"
+        alt="TechLab Botswana WhatsApp Status poster"
+        width="1080"
+        height="1920"
+      >
+      <figcaption>Status poster (1080×1920) — best for WhatsApp Status</figcaption>
+    </figure>
+  </body>
+</html>
