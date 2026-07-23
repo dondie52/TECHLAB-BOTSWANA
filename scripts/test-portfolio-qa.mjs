@@ -9,7 +9,7 @@ const report = { scrollEnd: null, a11y: [], viewports: [], errors: [] };
 async function openServices(viewport) {
   const page = await browser.newPage({ viewport });
   page.on("pageerror", (e) => report.errors.push(String(e)));
-  await page.goto("http://127.0.0.1:8080/services.html", {
+  await page.goto("http://127.0.0.1:8080/websites.html", {
     waitUntil: "domcontentloaded",
     timeout: 60000,
   });

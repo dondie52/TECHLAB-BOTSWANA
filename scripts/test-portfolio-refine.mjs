@@ -8,14 +8,14 @@ async function capture(name, viewport, projectIndex = 0) {
   const page = await browser.newPage({ viewport });
   const errors = [];
   page.on("pageerror", (e) => errors.push(String(e)));
-  await page.goto("http://127.0.0.1:8080/services.html#websites", {
+  await page.goto("http://127.0.0.1:8080/websites.html#work", {
     waitUntil: "domcontentloaded",
     timeout: 60000,
   });
   await page.waitForTimeout(1000);
   await page.evaluate(() => window.ScrollTrigger?.refresh?.());
   await page.evaluate(() => {
-    document.querySelector("#websites")?.scrollIntoView({ block: "start" });
+    document.querySelector("#work")?.scrollIntoView({ block: "start" });
   });
   await page.waitForTimeout(500);
   await page.evaluate(() => window.ScrollTrigger?.refresh?.());
@@ -77,7 +77,7 @@ async function capture(name, viewport, projectIndex = 0) {
 }
 
 try {
-  (await fetch("http://127.0.0.1:8080/services.html")).ok;
+  (await fetch("http://127.0.0.1:8080/websites.html")).ok;
 } catch {
   console.error("server down");
 }

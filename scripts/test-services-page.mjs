@@ -34,7 +34,7 @@ await checkPage("services-390", "http://127.0.0.1:8080/services.html", { width: 
 
 const page = await browser.newPage({ viewport: { width: 1440, height: 900 } });
 await page.goto("http://127.0.0.1:8080/services.html", { waitUntil: "domcontentloaded" });
-for (const id of ["overview", "security", "retail", "websites", "infrastructure", "process", "finder", "cta"]) {
+for (const id of ["overview", "security", "retail", "infrastructure", "process", "finder", "cta"]) {
   await page.locator("#" + id).scrollIntoViewIfNeeded();
   await page.waitForTimeout(450);
   await page.screenshot({ path: `screenshots/services/section-${id}.png` });

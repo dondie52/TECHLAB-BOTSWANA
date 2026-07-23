@@ -40,7 +40,8 @@ await shot("hero-1440", "http://127.0.0.1:8080/services.html", { width: 1440, he
 await shot("hero-390", "http://127.0.0.1:8080/services.html", { width: 390, height: 844 });
 await shot("cctv-1440", "http://127.0.0.1:8080/services.html", { width: 1440, height: 900 }, "#security");
 await shot("pos-1440", "http://127.0.0.1:8080/services.html", { width: 1440, height: 900 }, "#retail");
-await shot("websites-1440", "http://127.0.0.1:8080/services.html", { width: 1440, height: 900 }, "#websites");
+await shot("websites-1440", "http://127.0.0.1:8080/websites.html", { width: 1440, height: 900 }, "#work");
+await shot("automation-1440", "http://127.0.0.1:8080/automation.html", { width: 1440, height: 900 }, "#journey");
 await shot("infra-1440", "http://127.0.0.1:8080/services.html", { width: 1440, height: 900 }, "#infrastructure");
 await shot("process-1440", "http://127.0.0.1:8080/services.html", { width: 1440, height: 900 }, "#process");
 await shot("finder-1440", "http://127.0.0.1:8080/services.html", { width: 1440, height: 900 }, "#finder");

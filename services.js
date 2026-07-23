@@ -62,9 +62,15 @@ const FINDER_MAP = {
   },
   website: {
     label: "Recommended: Websites & Digital",
-    copy: "A clean responsive website with contact and WhatsApp integration helps customers find and trust your business.",
+    copy: "A clean responsive website with contact and WhatsApp integration helps customers find and trust your business. Open the Websites page for packages and selected work.",
     message: "Hello TechLab Botswana, I would like help with a website. My location is ______.",
-    anchor: "#websites",
+    href: "websites.html",
+  },
+  automation: {
+    label: "Recommended: Messaging Automation",
+    copy: "A shared inbox with auto-replies and lead routing keeps WhatsApp and social enquiries from getting lost. Open the Automation page for packages.",
+    message: "Hello TechLab Botswana, I would like help with messaging automation. My location is ______.",
+    href: "automation.html",
   },
   repair: {
     label: "Recommended: Computer Repairs",
@@ -123,10 +129,24 @@ function selectFinderOption(button) {
   finderWa.href = `https://wa.me/26776984827?text=${encodeURIComponent(entry.message)}`;
   finderResult.hidden = false;
 
-  const target = document.querySelector(entry.anchor);
   document.querySelectorAll(".svc-pin-section, .svc-infra").forEach((el) => {
     el.classList.remove("is-highlighted");
   });
+
+  if (entry.href) {
+    const explore = finderResult.querySelector("[data-finder-explore]");
+    if (explore) {
+      explore.hidden = false;
+      explore.href = entry.href;
+      explore.textContent = entry.href.includes("automation") ? "Open Automation page" : "Open Websites page";
+    }
+    return;
+  }
+
+  const explore = finderResult.querySelector("[data-finder-explore]");
+  if (explore) explore.hidden = true;
+
+  const target = document.querySelector(entry.anchor);
   target?.classList.add("is-highlighted");
 }
 
