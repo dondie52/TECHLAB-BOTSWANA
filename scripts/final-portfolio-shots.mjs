@@ -6,7 +6,7 @@ const browser = await chromium.launch();
 
 async function shot(name, viewport, idx) {
   const page = await browser.newPage({ viewport });
-  await page.goto("http://127.0.0.1:8080/services.html", { waitUntil: "domcontentloaded" });
+  await page.goto("http://127.0.0.1:8080/websites.html", { waitUntil: "domcontentloaded" });
   await page.waitForTimeout(900);
   await page.evaluate(() => window.ScrollTrigger?.refresh?.());
   await page.evaluate(() => document.querySelector("[data-gallery-pin]")?.scrollIntoView({ block: "start" }));
@@ -29,7 +29,7 @@ await shot("d1280-p3", { width: 1280, height: 720 }, 2);
 await shot("d1280-p5", { width: 1280, height: 720 }, 4);
 
 const mobile = await browser.newPage({ viewport: { width: 390, height: 844 } });
-await mobile.goto("http://127.0.0.1:8080/services.html", { waitUntil: "domcontentloaded" });
+await mobile.goto("http://127.0.0.1:8080/websites.html", { waitUntil: "domcontentloaded" });
 await mobile.waitForTimeout(800);
 await mobile.evaluate(() => document.querySelectorAll("[data-project]")[0]?.scrollIntoView({ block: "start" }));
 await mobile.waitForTimeout(350);
