@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1440" viewBox="0 0 1080 1440" role="img" aria-labelledby="title desc">
+  <title id="title">TechLab Botswana Messaging Automation Packages Poster</title>
+  <desc id="desc">A portrait marketing poster showing Starter, Growth, and Advanced automation packages with monthly and setup prices for TechLab Botswana.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fcfdfd"/>
+      <stop offset="100%" stop-color="#eef6f4"/>
+    </linearGradient>
+    <linearGradient id="cardStroke" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#70E0E0"/>
+      <stop offset="100%" stop-color="#006837"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="18" stdDeviation="24" flood-color="#0d1b1f" flood-opacity="0.08"/>
+    </filter>
+    <style>
+      .display { font-family: Arial, Helvetica, sans-serif; font-weight: 800; letter-spacing: -0.03em; }
+      .heading { font-family: Arial, Helvetica, sans-serif; font-weight: 700; letter-spacing: -0.02em; }
+      .label { font-family: Arial, Helvetica, sans-serif; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+      .body { font-family: Arial, Helvetica, sans-serif; font-weight: 400; }
+      .medium { font-family: Arial, Helvetica, sans-serif; font-weight: 600; }
+      .muted { fill: #46545a; }
+      .ink { fill: #08151b; }
+      .green { fill: #006837; }
+      .cyan { fill: #70E0E0; }
+      .small { font-size: 24px; }
+      .bullet { fill: #006837; font-size: 28px; }
+    </style>
+  </defs>
+
+  <rect width="1080" height="1440" fill="url(#bg)"/>
+
+  <g opacity="0.08">
+    <path d="M68 172h170c28 0 50 22 50 50v54" fill="none" stroke="#70E0E0" stroke-width="8" stroke-linecap="round"/>
+    <circle cx="68" cy="172" r="14" fill="#70E0E0"/>
+    <circle cx="288" cy="276" r="14" fill="#70E0E0"/>
+    <path d="M938 108h-146c-30 0-54 24-54 54v46" fill="none" stroke="#006837" stroke-width="8" stroke-linecap="round"/>
+    <circle cx="938" cy="108" r="14" fill="#006837"/>
+    <circle cx="738" cy="208" r="14" fill="#006837"/>
+  </g>
+
+  <g transform="translate(340 70)">
+    <rect x="0" y="0" width="400" height="400" rx="68" fill="#07161b"/>
+    <rect x="72" y="70" width="256" height="68" rx="18" fill="#70E0E0"/>
+    <rect x="180" y="116" width="40" height="172" fill="#70E0E0"/>
+    <path d="M124 178h42c24 0 44 20 44 44v138" fill="none" stroke="#70E0E0" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="124" cy="178" r="16" fill="#07161b" stroke="#70E0E0" stroke-width="18"/>
+    <circle cx="210" cy="360" r="16" fill="#07161b" stroke="#70E0E0" stroke-width="18"/>
+    <path d="M270 182v58l-24 48v72" fill="none" stroke="#006837" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M270 182c14-30 46-48 80-40v36l-28 26-28-26v-36c-8 2-16 6-24 14z" fill="#006837"/>
+    <circle cx="246" cy="360" r="16" fill="#07161b" stroke="#006837" stroke-width="18"/>
+  </g>
+
+  <text x="540" y="570" text-anchor="middle" class="display ink" font-size="102">TECHLAB</text>
+  <g transform="translate(0 0)">
+    <line x1="250" y1="630" x2="390" y2="630" stroke="#006837" stroke-width="6"/>
+    <line x1="690" y1="630" x2="830" y2="630" stroke="#006837" stroke-width="6"/>
+    <text x="540" y="645" text-anchor="middle" class="label ink" font-size="38">BOTSWANA</text>
+  </g>
+
+  <text x="540" y="735" text-anchor="middle" class="heading ink" font-size="64">Messaging automation packages</text>
+  <text x="540" y="787" text-anchor="middle" class="body muted" font-size="29">Shared inbox, WhatsApp setup, auto-replies and follow-up tools for Botswana businesses.</text>
+
+  <g transform="translate(85 860)" filter="url(#shadow)">
+    <rect x="0" y="0" width="286" height="360" rx="30" fill="#ffffff" stroke="url(#cardStroke)" stroke-width="3"/>
+    <text x="34" y="56" class="label green" font-size="21">Starter</text>
+    <text x="34" y="98" class="medium muted" font-size="28">Big wins for small teams</text>
+    <text x="34" y="168" class="display ink" font-size="56">P1,375</text>
+    <text x="34" y="202" class="medium muted" font-size="22">/ month</text>
+    <text x="34" y="246" class="medium green" font-size="28">+ P2,500 setup</text>
+    <circle cx="40" cy="293" r="5" fill="#006837"/><text x="58" y="301" class="body ink" font-size="22">Team inbox</text>
+    <circle cx="40" cy="327" r="5" fill="#006837"/><text x="58" y="335" class="body ink" font-size="22">Shared conversations</text>
+    <circle cx="40" cy="361" r="5" fill="#006837"/><text x="58" y="369" class="body ink" font-size="22">1,000 monthly active contacts</text>
+  </g>
+
+  <g transform="translate(397 826)" filter="url(#shadow)">
+    <rect x="0" y="0" width="286" height="402" rx="30" fill="#07161b"/>
+    <rect x="26" y="22" width="116" height="34" rx="17" fill="#70E0E0"/>
+    <text x="84" y="45" text-anchor="middle" class="label ink" font-size="14">Most popular</text>
+    <text x="34" y="96" class="label cyan" font-size="21">Growth</text>
+    <text x="34" y="138" class="medium" font-size="28" fill="#d7e5e1">Convert with automation &amp; AI</text>
+    <text x="34" y="214" class="display" font-size="60" fill="#ffffff">P2,760</text>
+    <text x="34" y="248" class="medium" font-size="22" fill="#bdd0cb">/ month</text>
+    <text x="34" y="292" class="medium cyan" font-size="28">+ P4,500 setup</text>
+    <circle cx="40" cy="339" r="5" fill="#70E0E0"/><text x="58" y="347" class="body" font-size="22" fill="#ffffff">Broadcasts</text>
+    <circle cx="40" cy="373" r="5" fill="#70E0E0"/><text x="58" y="381" class="body" font-size="22" fill="#ffffff">Workflow automation</text>
+    <circle cx="40" cy="407" r="5" fill="#70E0E0"/><text x="58" y="415" class="body" font-size="22" fill="#ffffff">AI lead qualification</text>
+  </g>
+
+  <g transform="translate(709 860)" filter="url(#shadow)">
+    <rect x="0" y="0" width="286" height="360" rx="30" fill="#ffffff" stroke="url(#cardStroke)" stroke-width="3"/>
+    <text x="34" y="56" class="label green" font-size="21">Advanced</text>
+    <text x="34" y="98" class="medium muted" font-size="28">Scale with deeper control</text>
+    <text x="34" y="168" class="display ink" font-size="56">P4,845</text>
+    <text x="34" y="202" class="medium muted" font-size="22">/ month</text>
+    <text x="34" y="246" class="medium green" font-size="28">+ P7,500 setup</text>
+    <circle cx="40" cy="293" r="5" fill="#006837"/><text x="58" y="301" class="body ink" font-size="22">Multiple workspaces</text>
+    <circle cx="40" cy="327" r="5" fill="#006837"/><text x="58" y="335" class="body ink" font-size="22">Webhooks &amp; HTTP workflows</text>
+    <circle cx="40" cy="361" r="5" fill="#006837"/><text x="58" y="369" class="body ink" font-size="22">SSO &amp; contact masking</text>
+  </g>
+
+  <text x="540" y="1278" text-anchor="middle" class="body muted" font-size="24">WhatsApp message fees from Meta billed separately. Yearly billing can save up to 20%.</text>
+
+  <g transform="translate(120 1315)">
+    <rect x="0" y="0" width="840" height="82" rx="22" fill="#006837"/>
+    <text x="150" y="52" class="heading" font-size="36" fill="#ffffff">Book a demo</text>
+    <text x="412" y="52" class="body" font-size="26" fill="#dff6ef">techlabbw.co.bw/automation  |  +267 76 984 827</text>
+  </g>
+</svg>
