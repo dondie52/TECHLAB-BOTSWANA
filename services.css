@@ -1772,6 +1772,40 @@
   letter-spacing: -0.02em;
 }
 
+.svc-package-price {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.45rem 0.65rem;
+  margin: 0;
+}
+
+.svc-package-price-sub {
+  margin-top: calc(var(--space-xs) * -1);
+}
+
+.svc-package-amount {
+  font-family: var(--font-display);
+  font-size: clamp(1.55rem, 2.4vw, 1.95rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--svc-ink);
+}
+
+.svc-package-price-sub .svc-package-amount {
+  font-size: clamp(1.05rem, 1.6vw, 1.2rem);
+  color: var(--svc-green);
+}
+
+.svc-package-period {
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--svc-muted);
+}
+
 .svc-package-copy {
   margin: 0;
   color: var(--svc-muted);
