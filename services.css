@@ -1838,6 +1838,11 @@
   background: var(--svc-green);
 }
 
+.svc-package .button {
+  align-self: flex-start;
+  margin-top: var(--space-md);
+}
+
 .svc-package-footnote {
   margin: var(--space-xl) 0 0;
   max-width: 62ch;
