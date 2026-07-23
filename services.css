@@ -2095,3 +2095,64 @@
   gap: 12px;
   margin-top: var(--space-md);
 }
+
+/* Media frames for websites + automation */
+.auto-media-frame,
+.web-media-frame {
+  margin: var(--space-2xl) 0 0;
+  border: 1px solid var(--svc-line);
+  overflow: hidden;
+  background: oklch(8% 0.01 195);
+}
+
+.auto-media-frame img,
+.web-media-frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
+.automation-page .svc-hero-visual {
+  position: relative;
+}
+
+.auto-inbox-overlay {
+  position: absolute;
+  right: 4%;
+  bottom: 6%;
+  width: min(72%, 340px);
+  max-width: 340px;
+  box-shadow: 0 18px 40px oklch(0% 0 0 / 0.45);
+  border-color: oklch(96% 0.008 195 / 0.22);
+}
+
+.auto-inbox-overlay .auto-inbox-body {
+  grid-template-columns: 1fr;
+  min-height: 0;
+}
+
+.auto-inbox-overlay .auto-inbox-list {
+  border-right: none;
+  border-bottom: 1px solid var(--svc-line);
+}
+
+.auto-inbox-overlay .auto-inbox-item:nth-child(n + 2) {
+  display: none;
+}
+
+.auto-inbox-overlay .auto-bubble {
+  font-size: 0.78rem;
+}
+
+@media (max-width: 900px) {
+  .auto-inbox-overlay {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    width: 100%;
+    max-width: none;
+    margin-top: var(--space-md);
+  }
+}

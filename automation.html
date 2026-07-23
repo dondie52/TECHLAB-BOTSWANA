@@ -17,14 +17,14 @@
     >
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://dondie52.github.io/TECHLAB-BOTSWANA/automation.html">
-    <meta property="og:image" content="https://dondie52.github.io/TECHLAB-BOTSWANA/assets/services/hero/services-hero.webp">
+    <meta property="og:image" content="https://dondie52.github.io/TECHLAB-BOTSWANA/assets/services/automation/automation-hero.webp">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Business Messaging Automation | TechLab Botswana">
     <meta
       name="twitter:description"
       content="Capture, convert and retain customers with WhatsApp and social messaging automation for Botswana businesses."
     >
-    <meta name="twitter:image" content="https://dondie52.github.io/TECHLAB-BOTSWANA/assets/services/hero/services-hero.webp">
+    <meta name="twitter:image" content="https://dondie52.github.io/TECHLAB-BOTSWANA/assets/services/automation/automation-hero.webp">
     <link rel="icon" href="/favicon.ico" sizes="any">
     <link rel="icon" href="/favicon.png" type="image/png" sizes="48x48">
     <link rel="icon" href="assets/favicon-192.png" type="image/png" sizes="192x192">
@@ -33,6 +33,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+    <link
+      rel="preload"
+      as="image"
+      href="assets/services/automation/automation-hero-mobile.webp"
+      type="image/webp"
+      imagesrcset="assets/services/automation/automation-hero-mobile.webp 700w, assets/services/automation/automation-hero.webp 1152w"
+      imagesizes="(max-width: 700px) calc(100vw - 40px), min(52vw, 650px)"
+      fetchpriority="high"
+    >
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="services.css">
   </head>
@@ -87,8 +96,22 @@
             </div>
           </div>
 
-          <div class="svc-hero-visual svc-hero-reveal" aria-hidden="true">
-            <div class="auto-inbox-mock" data-inbox-mock>
+          <div class="svc-hero-visual svc-hero-reveal">
+            <picture>
+              <source media="(max-width: 700px)" srcset="assets/services/automation/automation-hero-mobile.webp" type="image/webp">
+              <img
+                class="svc-hero-poster"
+                src="assets/services/automation/automation-hero.webp"
+                srcset="assets/services/automation/automation-hero-mobile.webp 700w, assets/services/automation/automation-hero.webp 1152w"
+                sizes="(max-width: 700px) calc(100vw - 40px), min(52vw, 650px)"
+                alt="Shop owner managing customer WhatsApp messages on a phone"
+                width="1152"
+                height="768"
+                decoding="async"
+                fetchpriority="high"
+              >
+            </picture>
+            <div class="auto-inbox-mock auto-inbox-overlay" data-inbox-mock aria-hidden="true">
               <div class="auto-inbox-chrome">
                 <span></span><span></span><span></span>
                 <p>Team inbox</p>
@@ -103,16 +126,10 @@
                     <strong>Mma Dube · Instagram</strong>
                     <span>Price for a POS setup?</span>
                   </p>
-                  <p class="auto-inbox-item">
-                    <strong>Fresh Water · Facebook</strong>
-                    <span>Can we get a website quote?</span>
-                  </p>
                 </aside>
                 <div class="auto-inbox-thread">
                   <p class="auto-bubble auto-bubble-in">Do you install CCTV in Serowe?</p>
-                  <p class="auto-bubble auto-bubble-auto">Yes — we cover Serowe. Are you looking for a shop, office or home?</p>
-                  <p class="auto-bubble auto-bubble-in">Shop. Need mobile viewing too.</p>
-                  <p class="auto-bubble auto-bubble-out">Noted. A technician will confirm options and a quote shortly.</p>
+                  <p class="auto-bubble auto-bubble-auto">Yes — we cover Serowe. Shop, office or home?</p>
                   <p class="auto-inbox-status">AI answered · Handed to team</p>
                 </div>
               </div>
@@ -148,6 +165,17 @@
               to repeat business.
             </p>
           </div>
+
+          <figure class="auto-media-frame reveal">
+            <img
+              src="assets/services/automation/automation-inbox.webp"
+              alt="Phone showing a shared messaging inbox on a workshop desk"
+              width="960"
+              height="640"
+              loading="lazy"
+              decoding="async"
+            >
+          </figure>
 
           <ol class="auto-journey-list" data-journey>
             <li class="auto-journey-step reveal is-active" data-journey-step="0">
@@ -194,6 +222,17 @@
               installed and handed over by TechLab.
             </p>
           </div>
+
+          <figure class="auto-media-frame reveal">
+            <img
+              src="assets/services/automation/automation-team.webp"
+              alt="Shop staff coordinating customer replies together at the counter"
+              width="960"
+              height="640"
+              loading="lazy"
+              decoding="async"
+            >
+          </figure>
 
           <div class="svc-feature-groups auto-capability-grid" data-capabilities>
             <article class="svc-feature-group is-active reveal" data-feature-group>
