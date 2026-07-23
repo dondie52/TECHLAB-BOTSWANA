@@ -2156,3 +2156,38 @@
     margin-top: var(--space-md);
   }
 }
+
+/* Automation ad help / FAQ */
+.auto-help {
+  padding: var(--space-3xl) 0;
+  border-top: 1px solid var(--svc-line);
+}
+
+.auto-help-list {
+  margin-top: var(--space-2xl);
+  display: grid;
+  gap: 0;
+  border-top: 1px solid var(--svc-line);
+}
+
+.auto-help-item {
+  padding: var(--space-xl) 0;
+  border-bottom: 1px solid var(--svc-line);
+}
+
+.auto-help-item h3 {
+  margin: 0 0 var(--space-sm);
+  font-family: var(--font-display);
+  font-size: clamp(1.15rem, 2vw, 1.45rem);
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  color: var(--svc-ink);
+}
+
+.auto-help-item p {
+  margin: 0;
+  max-width: 62ch;
+  font-size: var(--type-body);
+  line-height: 1.65;
+  color: var(--svc-muted);
+}
