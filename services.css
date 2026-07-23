@@ -1838,9 +1838,12 @@
   background: var(--svc-green);
 }
 
-.svc-package .button {
-  align-self: flex-start;
-  margin-top: var(--space-md);
+.svc-package-footnote {
+  margin: var(--space-xl) 0 0;
+  max-width: 62ch;
+  color: var(--svc-muted);
+  font-size: 0.92rem;
+  line-height: 1.55;
 }
 
 .svc-catalog-static {
