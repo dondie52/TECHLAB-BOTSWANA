@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1536" viewBox="0 0 1080 1536" role="img" aria-labelledby="title desc">
+  <title id="title">TechLab Botswana  One shared inbox for customer chats</title>
+  <desc id="desc">Portrait marketing poster explaining TechLab Botswana business messaging software for WhatsApp, Facebook and Instagram, with Starter, Growth and Advanced packages.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fcfdfd"/>
+      <stop offset="100%" stop-color="#eef6f4"/>
+    </linearGradient>
+    <style>
+      .display { font-family: Epilogue, Arial, Helvetica, sans-serif; font-weight: 800; letter-spacing: -0.03em; }
+      .heading { font-family: Epilogue, Arial, Helvetica, sans-serif; font-weight: 700; letter-spacing: -0.02em; }
+      .label { font-family: Epilogue, Arial, Helvetica, sans-serif; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
+      .body { font-family: Epilogue, Arial, Helvetica, sans-serif; font-weight: 500; }
+      .ink { fill: #0b1a1c; }
+      .muted { fill: #46545a; }
+      .green { fill: #006837; }
+      .cyan { fill: #70E0E0; }
+    </style>
+  </defs>
+
+  <rect width="1080" height="1536" fill="url(#bg)"/>
+
+  <rect x="468" y="48" width="64" height="64" rx="14" fill="#101828"/>
+  <path d="M482 62h36v8H504v24h-8V70h-14z" fill="#82efe5"/>
+  <path d="M510 76h8v18H498v-7h12z" fill="#0b6fd3"/>
+  <text x="540" y="148" text-anchor="middle" class="display ink" font-size="40">TECHLAB</text>
+  <line x1="430" y1="168" x2="480" y2="168" stroke="#006837" stroke-width="3"/>
+  <line x1="600" y1="168" x2="650" y2="168" stroke="#006837" stroke-width="3"/>
+  <text x="540" y="176" text-anchor="middle" class="label ink" font-size="14">BOTSWANA</text>
+
+  <rect x="390" y="208" width="300" height="36" rx="18" fill="#0d7a551a"/>
+  <circle cx="418" cy="226" r="5" fill="#0d7a55"/>
+  <text x="540" y="232" text-anchor="middle" class="label green" font-size="14">What we sell</text>
+
+  <text x="540" y="300" text-anchor="middle" class="display ink" font-size="44">One shared inbox for</text>
+  <text x="540" y="352" text-anchor="middle" class="display ink" font-size="44">all your customer chats</text>
+  <text x="540" y="400" text-anchor="middle" class="body muted" font-size="22">Business messaging software for WhatsApp, Facebook &amp; Instagram </text>
+  <text x="540" y="430" text-anchor="middle" class="body muted" font-size="22">installed and handed over by TechLab.</text>
+
+  <rect x="64" y="468" width="952" height="96" rx="22" fill="#ffffff" stroke="#0b1a1c1f" stroke-width="2"/>
+  <text x="92" y="512" class="heading ink" font-size="20">WhatsApp · Facebook · Instagram</text>
+  <text x="92" y="542" class="body muted" font-size="18">Customer chats from every channel</text>
+  <circle cx="540" cy="516" r="26" fill="#006837"/>
+  <text x="540" y="524" text-anchor="middle" fill="#ffffff" font-size="24" font-weight="800">’</text>
+  <rect x="620" y="488" width="360" height="56" rx="16" fill="#07161b"/>
+  <text x="800" y="512" text-anchor="middle" class="heading cyan" font-size="22">One team inbox</text>
+  <text x="800" y="534" text-anchor="middle" fill="#bdd0cb" font-size="14" font-weight="600">Staff answer together · nothing missed</text>
+
+  <text x="64" y="620" class="label green" font-size="15">What you get</text>
+  <text x="64" y="662" class="heading ink" font-size="24">01  Capture every enquiry</text>
+  <text x="120" y="694" class="body muted" font-size="18">Ads, website clicks and walk-ins land in one shared place.</text>
+  <text x="64" y="742" class="heading ink" font-size="24">02  Answer faster</text>
+  <text x="120" y="774" class="body muted" font-size="18">Auto-replies and AI handle FAQs, then hand buyers to staff.</text>
+  <text x="64" y="822" class="heading ink" font-size="24">03  Follow up &amp; bring them back</text>
+  <text x="120" y="854" class="body muted" font-size="18">Reminders and promotions with full chat history kept.</text>
+
+  <g transform="translate(64 900)">
+    <rect x="0" y="34" width="300" height="250" rx="22" fill="#ffffff" stroke="#00683759" stroke-width="2"/>
+    <text x="24" y="74" class="label green" font-size="14">Starter</text>
+    <text x="24" y="108" class="heading muted" font-size="18">Small teams, shared chats</text>
+    <text x="24" y="164" class="display ink" font-size="40">P1,375</text>
+    <text x="24" y="192" class="body muted" font-size="16">/ month</text>
+    <text x="24" y="228" class="heading green" font-size="18">+ P2,500 setup</text>
+    <text x="24" y="262" class="body ink" font-size="16">Team inbox · Shared chats</text>
+
+    <rect x="326" y="0" width="300" height="284" rx="22" fill="#07161b"/>
+    <rect x="350" y="16" width="252" height="28" rx="14" fill="#70E0E0"/>
+    <text x="476" y="36" text-anchor="middle" class="label ink" font-size="12">Most popular</text>
+    <text x="350" y="84" class="label cyan" font-size="14">Growth</text>
+    <text x="350" y="118" class="heading" font-size="18" fill="#d7e5e1">Automation &amp; AI replies</text>
+    <text x="350" y="174" class="display" font-size="40" fill="#ffffff">P2,760</text>
+    <text x="350" y="202" class="body" font-size="16" fill="#bdd0cb">/ month</text>
+    <text x="350" y="238" class="heading cyan" font-size="18">+ P4,500 setup</text>
+    <text x="350" y="272" class="body" font-size="16" fill="#ffffff">Broadcasts · AI qualification</text>
+
+    <rect x="652" y="34" width="300" height="250" rx="22" fill="#ffffff" stroke="#00683759" stroke-width="2"/>
+    <text x="676" y="74" class="label green" font-size="14">Advanced</text>
+    <text x="676" y="108" class="heading muted" font-size="18">Larger teams, more control</text>
+    <text x="676" y="164" class="display ink" font-size="40">P4,845</text>
+    <text x="676" y="192" class="body muted" font-size="16">/ month</text>
+    <text x="676" y="228" class="heading green" font-size="18">+ P7,500 setup</text>
+    <text x="676" y="262" class="body ink" font-size="16">Multi-workspace · SSO</text>
+  </g>
+
+  <rect x="64" y="1220" width="952" height="76" rx="18" fill="#006837"/>
+  <text x="540" y="1268" text-anchor="middle" class="heading" font-size="30" fill="#ffffff">Book a demo</text>
+  <text x="540" y="1340" text-anchor="middle" class="heading ink" font-size="20">techlabbw.co.bw/automation  ·  +267 76 984 827</text>
+  <text x="540" y="1380" text-anchor="middle" class="body green" font-size="16">WhatsApp Meta fees billed separately · Yearly save up to 20%</text>
+</svg>
