@@ -1,0 +1,488 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TechLab Botswana — WhatsApp Catalogue Square</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #0b1a1c;
+      --muted: #46545a;
+      --green: #0d7a55;
+      --green-deep: #006837;
+      --cyan: #70e0e0;
+      --paper: #f7faf9;
+      --paper-deep: #eef6f4;
+      --line: rgba(11, 26, 28, 0.12);
+      --dark: #07161b;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      width: 1080px;
+      height: 1080px;
+      overflow: hidden;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: Epilogue, system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .poster {
+      width: 1080px;
+      height: 1080px;
+      padding: 40px 44px 36px;
+      background:
+        radial-gradient(ellipse 80% 50% at 50% -8%, rgba(112, 224, 224, 0.2), transparent 55%),
+        linear-gradient(180deg, #fcfdfd 0%, var(--paper) 50%, var(--paper-deep) 100%);
+      display: grid;
+      grid-template-rows: auto auto auto 1fr auto;
+      gap: 18px;
+      position: relative;
+    }
+
+    .poster::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: 0.06;
+      pointer-events: none;
+      background-image:
+        linear-gradient(90deg, transparent 0 78px, var(--cyan) 78px 80px, transparent 80px),
+        linear-gradient(180deg, transparent 0 118px, var(--green-deep) 118px 120px, transparent 120px);
+      background-size: 140px 140px;
+      mask-image: linear-gradient(180deg, #000 0%, transparent 42%);
+    }
+
+    .brand {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+    }
+
+    .brand-mark {
+      width: 56px;
+      height: 56px;
+      border-radius: 14px;
+      background: #101828;
+      display: grid;
+      place-items: center;
+    }
+
+    .brand-mark svg { width: 40px; height: 40px; display: block; }
+
+    .brand-text { display: grid; gap: 2px; }
+
+    .brand-name {
+      font-size: 32px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1;
+    }
+
+    .brand-sub {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    .brand-sub::before,
+    .brand-sub::after {
+      content: "";
+      width: 28px;
+      height: 2px;
+      background: var(--green-deep);
+    }
+
+    .hero {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      display: grid;
+      gap: 10px;
+      justify-items: center;
+    }
+
+    .product-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(13, 122, 85, 0.1);
+      color: var(--green-deep);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .product-pill span {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--green);
+    }
+
+    .hero h1 {
+      font-size: 40px;
+      font-weight: 800;
+      letter-spacing: -0.035em;
+      line-height: 1.08;
+      max-width: 18ch;
+    }
+
+    .hero .lede {
+      font-size: 19px;
+      font-weight: 500;
+      line-height: 1.35;
+      color: var(--muted);
+      max-width: 38ch;
+    }
+
+    .channels {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 14px;
+      padding: 16px 20px;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.85);
+    }
+
+    .channel-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: flex-end;
+    }
+
+    .channel {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: #fff;
+      border: 1px solid var(--line);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .channel i {
+      width: 18px;
+      height: 18px;
+      border-radius: 5px;
+      display: grid;
+      place-items: center;
+      font-style: normal;
+      font-size: 10px;
+      font-weight: 800;
+      color: #fff;
+    }
+
+    .channel.wa i { background: #25d366; }
+    .channel.fb i { background: #1877f2; }
+    .channel.ig i { background: linear-gradient(135deg, #f58529, #dd2a7b, #8134af); }
+
+    .flow-arrow {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--green-deep);
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-size: 22px;
+      font-weight: 800;
+    }
+
+    .result-box {
+      display: grid;
+      gap: 2px;
+      padding: 12px 16px;
+      border-radius: 14px;
+      background: var(--dark);
+      color: #fff;
+    }
+
+    .result-box strong {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--cyan);
+    }
+
+    .result-box span {
+      font-size: 13px;
+      font-weight: 600;
+      color: rgba(247, 250, 249, 0.78);
+    }
+
+    .packages {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      align-items: end;
+    }
+
+    .pkg {
+      position: relative;
+      border-radius: 18px;
+      padding: 16px 14px 14px;
+      background: #fff;
+      border: 1.5px solid rgba(0, 104, 55, 0.35);
+      display: grid;
+      gap: 4px;
+      min-height: 220px;
+    }
+
+    .pkg.featured {
+      background: var(--dark);
+      border-color: var(--dark);
+      min-height: 244px;
+      padding-top: 28px;
+      color: #fff;
+    }
+
+    .pkg .ribbon {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      right: 10px;
+      text-align: center;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink);
+      background: var(--cyan);
+      border-radius: 999px;
+      padding: 5px 8px;
+    }
+
+    .pkg .tier {
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--green-deep);
+    }
+
+    .pkg.featured .tier { color: var(--cyan); }
+
+    .pkg h3 {
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      color: var(--muted);
+      min-height: 2.3em;
+    }
+
+    .pkg.featured h3 { color: rgba(215, 229, 225, 0.92); }
+
+    .price strong {
+      display: block;
+      font-size: 30px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1;
+      margin-top: 4px;
+    }
+
+    .price small {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--muted);
+    }
+
+    .pkg.featured .price small { color: #bdd0cb; }
+
+    .setup {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--green-deep);
+      margin-bottom: 2px;
+    }
+
+    .pkg.featured .setup { color: var(--cyan); }
+
+    .pkg ul {
+      list-style: none;
+      display: grid;
+      gap: 6px;
+      margin-top: auto;
+    }
+
+    .pkg li {
+      position: relative;
+      padding-left: 14px;
+      font-size: 13px;
+      font-weight: 600;
+      line-height: 1.25;
+    }
+
+    .pkg li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.4em;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--green-deep);
+    }
+
+    .pkg.featured li::before { background: var(--cyan); }
+
+    .footer {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      gap: 10px;
+      justify-items: center;
+    }
+
+    .cta {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 64px;
+      border-radius: 16px;
+      background: var(--green-deep);
+      color: #fff;
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    .contact {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    .contact span { color: var(--muted); font-weight: 600; }
+
+    .fine {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--green-deep);
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <article class="poster" aria-label="TechLab Botswana WhatsApp catalogue square">
+    <header class="brand">
+      <div class="brand-mark" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+          <rect width="64" height="64" rx="10" fill="#101828"/>
+          <path d="M14 18h36v8H36v24h-8V26H14z" fill="#82efe5"/>
+          <path d="M42 32h8v18H30v-7h12z" fill="#0b6fd3"/>
+        </svg>
+      </div>
+      <div class="brand-text">
+        <div class="brand-name">TECHLAB</div>
+        <div class="brand-sub">Botswana</div>
+      </div>
+    </header>
+
+    <section class="hero">
+      <p class="product-pill"><span aria-hidden="true"></span> What we sell</p>
+      <h1>One shared inbox for all your customer chats</h1>
+      <p class="lede">
+        Business messaging for WhatsApp, Facebook &amp; Instagram — set up by TechLab.
+      </p>
+    </section>
+
+    <section class="channels" aria-label="How the product works">
+      <div class="channel-row">
+        <span class="channel wa"><i>WA</i> WhatsApp</span>
+        <span class="channel fb"><i>f</i> Facebook</span>
+        <span class="channel ig"><i>IG</i> Instagram</span>
+      </div>
+      <div class="flow-arrow" aria-hidden="true">→</div>
+      <div class="result-box">
+        <strong>One team inbox</strong>
+        <span>Staff answer together · nothing missed</span>
+      </div>
+    </section>
+
+    <section class="packages" aria-label="Monthly packages">
+      <article class="pkg">
+        <p class="tier">Starter</p>
+        <h3>Small teams, shared chats</h3>
+        <div class="price">
+          <strong>P1,375</strong>
+          <small>/ month</small>
+        </div>
+        <p class="setup">+ P2,500 setup</p>
+        <ul>
+          <li>Team inbox</li>
+          <li>Shared conversations</li>
+          <li>From 1,000 contacts</li>
+        </ul>
+      </article>
+
+      <article class="pkg featured">
+        <p class="ribbon">Most popular</p>
+        <p class="tier">Growth</p>
+        <h3>Automation &amp; AI replies</h3>
+        <div class="price">
+          <strong>P2,760</strong>
+          <small>/ month</small>
+        </div>
+        <p class="setup">+ P4,500 setup</p>
+        <ul>
+          <li>Broadcasts</li>
+          <li>Workflow automation</li>
+          <li>AI lead qualification</li>
+        </ul>
+      </article>
+
+      <article class="pkg">
+        <p class="tier">Advanced</p>
+        <h3>Larger teams, more control</h3>
+        <div class="price">
+          <strong>P4,845</strong>
+          <small>/ month</small>
+        </div>
+        <p class="setup">+ P7,500 setup</p>
+        <ul>
+          <li>Multi-workspace</li>
+          <li>Deeper integrations</li>
+          <li>SSO &amp; security</li>
+        </ul>
+      </article>
+    </section>
+
+    <footer class="footer">
+      <div class="cta">Book a demo · +267 76 984 827</div>
+      <p class="contact">
+        <span>techlabbw.co.bw/automation</span>
+      </p>
+      <p class="fine">WhatsApp Meta fees billed separately · Yearly save up to 20%</p>
+    </footer>
+  </article>
+</body>
+</html>
