@@ -10,8 +10,8 @@
 
 **Prices on poster**
 
-- Starter — P3,500 one-time  
-- Business — P7,500 one-time (Most popular)  
-- Custom — from P12,000  
+- Starter — P1,375 one-time  
+- Business — P2,750 one-time (Most popular)  
+- Custom — from P4,500  
 
 URL on poster: `techlabbw.co.bw/powerapps`
