@@ -2156,3 +2156,161 @@
     margin-top: var(--space-md);
   }
 }
+
+/* —— Power Apps catalog —— */
+.pa-catalog,
+.pa-how {
+  padding: clamp(3.5rem, 8vw, 6rem) 0;
+  border-top: 1px solid var(--svc-line);
+}
+
+.pa-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1.25rem;
+  margin-top: var(--space-2xl);
+  padding-bottom: var(--space-md);
+  border-bottom: 1px solid var(--svc-line);
+}
+
+.pa-filter {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  padding: 0.35rem 0;
+  font-family: var(--font-ui, "Epilogue", system-ui, sans-serif);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--svc-muted, var(--muted));
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: color 180ms ease, border-color 180ms ease;
+}
+
+.pa-filter:hover,
+.pa-filter:focus-visible {
+  color: var(--svc-ink, var(--ink));
+}
+
+.pa-filter:focus-visible {
+  outline: 2px solid color-mix(in oklch, var(--green, oklch(48% 0.13 155)) 55%, transparent);
+  outline-offset: 3px;
+}
+
+.pa-filter.is-active {
+  color: var(--svc-ink, var(--ink));
+  border-bottom-color: var(--green, oklch(48% 0.13 155));
+}
+
+.pa-filter-status {
+  margin: var(--space-md) 0 0;
+  font-family: var(--font-ui, "Epilogue", system-ui, sans-serif);
+  font-size: 0.85rem;
+  color: var(--svc-muted, var(--muted));
+}
+
+.pa-app-list {
+  list-style: none;
+  margin: var(--space-xl) 0 0;
+  padding: 0;
+  display: grid;
+  gap: 0;
+}
+
+.pa-app {
+  border-top: 1px solid var(--svc-line);
+  padding: var(--space-xl) 0;
+}
+
+.pa-app:last-child {
+  border-bottom: 1px solid var(--svc-line);
+}
+
+.pa-app[hidden],
+.pa-app.is-filtered-out {
+  display: none;
+}
+
+.pa-app article {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: var(--space-sm) var(--space-xl);
+  align-items: start;
+}
+
+.pa-app-cat {
+  grid-column: 1 / -1;
+  margin: 0;
+  font-family: var(--font-ui, "Epilogue", system-ui, sans-serif);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--green, oklch(48% 0.13 155));
+}
+
+.pa-app h3 {
+  margin: 0;
+  font-size: clamp(1.35rem, 2.4vw, 1.7rem);
+  letter-spacing: -0.015em;
+}
+
+.pa-app article > p {
+  grid-column: 1;
+  margin: 0;
+  max-width: 46ch;
+  color: var(--svc-muted, var(--muted));
+}
+
+.pa-app ul {
+  grid-column: 1;
+  list-style: none;
+  margin: var(--space-sm) 0 0;
+  padding: 0;
+  display: grid;
+  gap: 0.35rem;
+}
+
+.pa-app li {
+  position: relative;
+  padding-left: 1.1rem;
+  font-family: var(--font-ui, "Epilogue", system-ui, sans-serif);
+  font-size: 0.92rem;
+  color: var(--svc-ink, var(--ink));
+}
+
+.pa-app li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 0.4rem;
+  height: 0.4rem;
+  background: var(--green, oklch(48% 0.13 155));
+}
+
+.pa-app .button {
+  grid-column: 2;
+  grid-row: 2 / span 3;
+  align-self: center;
+  white-space: nowrap;
+}
+
+.pa-media-frame {
+  margin-top: var(--space-2xl);
+}
+
+@media (max-width: 760px) {
+  .pa-app article {
+    grid-template-columns: 1fr;
+  }
+
+  .pa-app .button {
+    grid-column: 1;
+    grid-row: auto;
+    justify-self: start;
+    margin-top: var(--space-md);
+  }
+}
