@@ -72,6 +72,12 @@ const FINDER_MAP = {
     message: "Hello TechLab Botswana, I would like help with messaging automation. My location is ______.",
     href: "automation.html",
   },
+  powerapps: {
+    label: "Recommended: Power Apps",
+    copy: "A ready business app for stock, job cards, inspections or team workflows can replace paper lists and scattered spreadsheets. Open the Power Apps catalog to browse options.",
+    message: "Hello TechLab Botswana, I would like help with a Power App. My location is ______.",
+    href: "powerapps.html",
+  },
   repair: {
     label: "Recommended: Computer Repairs",
     copy: "Diagnostics, slow-computer troubleshooting and software fixes are handled from our Mahalapye workshop.",
@@ -138,7 +144,13 @@ function selectFinderOption(button) {
     if (explore) {
       explore.hidden = false;
       explore.href = entry.href;
-      explore.textContent = entry.href.includes("automation") ? "Open Automation page" : "Open Websites page";
+      if (entry.href.includes("automation")) {
+        explore.textContent = "Open Automation page";
+      } else if (entry.href.includes("powerapps")) {
+        explore.textContent = "Open Power Apps catalog";
+      } else {
+        explore.textContent = "Open Websites page";
+      }
     }
     return;
   }
