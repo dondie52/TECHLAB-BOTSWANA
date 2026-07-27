@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>TechLab Botswana — Website Quotation TLB-WEB-20260727</title>
+  <style>
+    @font-face {
+      font-family: Epilogue;
+      src: url("/tmp/fonts/Epilogue.ttf") format("truetype");
+      font-weight: 100 900;
+      font-style: normal;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      width: 1240px;
+      height: 1754px;
+      overflow: hidden;
+      background: #f7faf9;
+      color: #14201c;
+      font-family: Epilogue, "Liberation Sans", Arial, sans-serif;
+    }
+    .page {
+      width: 1240px;
+      height: 1754px;
+      padding: 64px 72px 56px;
+      position: relative;
+      background:
+        radial-gradient(ellipse 80% 50% at 100% 0%, rgba(13, 122, 85, 0.07), transparent 55%),
+        radial-gradient(ellipse 60% 40% at 0% 100%, rgba(13, 122, 85, 0.05), transparent 50%),
+        #f7faf9;
+    }
+    .accent-bar {
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 10px;
+      background: linear-gradient(180deg, #0d7a55 0%, #0a5c40 100%);
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 32px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid rgba(20, 32, 28, 0.12);
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+    .brand img {
+      width: 72px;
+      height: 72px;
+      object-fit: contain;
+      border-radius: 14px;
+    }
+    .brand-text h1 {
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+    }
+    .brand-text p {
+      margin-top: 4px;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #0d7a55;
+    }
+    .meta {
+      text-align: right;
+      font-size: 15px;
+      line-height: 1.55;
+      color: #3a4a44;
+    }
+    .meta strong {
+      display: block;
+      color: #14201c;
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 6px;
+    }
+    .to-block {
+      margin-top: 28px;
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 24px;
+    }
+    .label {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #0d7a55;
+      margin-bottom: 8px;
+    }
+    .to-card, .package-card {
+      background: #fff;
+      border: 1px solid rgba(20, 32, 28, 0.1);
+      border-radius: 16px;
+      padding: 22px 24px;
+    }
+    .to-card h2, .package-card h2 {
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+    }
+    .to-card p, .package-card p {
+      font-size: 16px;
+      line-height: 1.5;
+      color: #3a4a44;
+    }
+    .package-card {
+      background: linear-gradient(145deg, #0d7a55 0%, #0a5c40 100%);
+      border: none;
+      color: #fff;
+    }
+    .package-card .label { color: rgba(255,255,255,0.75); }
+    .package-card h2 { color: #fff; }
+    .package-card p { color: rgba(255,255,255,0.9); }
+    .price-line {
+      margin-top: 14px;
+      font-size: 34px;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+    }
+    .price-line span {
+      font-size: 16px;
+      font-weight: 500;
+      opacity: 0.85;
+      margin-left: 8px;
+    }
+    .section {
+      margin-top: 28px;
+    }
+    .section h3 {
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      margin-bottom: 14px;
+    }
+    .features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px 20px;
+      list-style: none;
+    }
+    .features li {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      background: #fff;
+      border: 1px solid rgba(20, 32, 28, 0.08);
+      border-radius: 12px;
+      padding: 14px 16px;
+      font-size: 15px;
+      line-height: 1.4;
+      color: #24332d;
+    }
+    .features li::before {
+      content: "";
+      flex: 0 0 10px;
+      width: 10px;
+      height: 10px;
+      margin-top: 5px;
+      border-radius: 50%;
+      background: #0d7a55;
+    }
+    .money {
+      margin-top: 28px;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 20px;
+    }
+    .money-box {
+      background: #fff;
+      border: 1px solid rgba(20, 32, 28, 0.1);
+      border-radius: 16px;
+      padding: 22px 24px;
+    }
+    .money-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(20, 32, 28, 0.08);
+      font-size: 16px;
+    }
+    .money-row:last-child { border-bottom: none; }
+    .money-row.total {
+      margin-top: 4px;
+      padding-top: 14px;
+      border-top: 2px solid #0d7a55;
+      border-bottom: none;
+      font-weight: 700;
+      font-size: 20px;
+    }
+    .money-row .amt { font-weight: 700; color: #0d7a55; }
+    .note {
+      margin-top: 12px;
+      font-size: 14px;
+      line-height: 1.45;
+      color: #3a4a44;
+    }
+    .bank dl {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 8px 12px;
+      font-size: 15px;
+    }
+    .bank dt { color: #5a6a64; }
+    .bank dd { font-weight: 600; color: #14201c; }
+    .timeline {
+      margin-top: 24px;
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 20px;
+    }
+    .pill {
+      background: rgba(13, 122, 85, 0.1);
+      border-radius: 16px;
+      padding: 22px 24px;
+    }
+    .pill strong {
+      display: block;
+      font-size: 28px;
+      font-weight: 700;
+      color: #0d7a55;
+      letter-spacing: -0.02em;
+      margin-top: 4px;
+    }
+    .next {
+      background: #fff;
+      border: 1px solid rgba(20, 32, 28, 0.1);
+      border-radius: 16px;
+      padding: 22px 24px;
+      font-size: 16px;
+      line-height: 1.5;
+      color: #24332d;
+    }
+    .footer {
+      position: absolute;
+      left: 72px;
+      right: 72px;
+      bottom: 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 18px;
+      border-top: 1px solid rgba(20, 32, 28, 0.12);
+      font-size: 14px;
+      color: #3a4a44;
+    }
+    .footer strong { color: #14201c; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="accent-bar" aria-hidden="true"></div>
+
+    <header class="header">
+      <div class="brand">
+        <img src="../google-business/techlab-botswana-google-logo.png" alt="TechLab Botswana logo" />
+        <div class="brand-text">
+          <h1>TECHLAB BOTSWANA</h1>
+          <p>IT · CCTV · POS · Websites</p>
+        </div>
+      </div>
+      <div class="meta">
+        <strong>Website Quotation</strong>
+        Quote ref: TLB-WEB-20260727<br />
+        Date: 27 Jul 2026<br />
+        Valid until: 10 Aug 2026
+      </div>
+    </header>
+
+    <div class="to-block">
+      <div class="to-card">
+        <p class="label">To</p>
+        <h2>Kabisoi</h2>
+        <p>
+          kabisoilw@gmail.com<br />
+          wamunyimalindunda@yahoo.com<br />
+          WhatsApp: +267 73 251 171
+        </p>
+      </div>
+      <div class="package-card">
+        <p class="label">Package</p>
+        <h2>Website Starter</h2>
+        <p>1–3 page presence site · Free domain · Free Google email setup</p>
+        <div class="price-line">P1,500<span>one-time</span></div>
+      </div>
+    </div>
+
+    <section class="section">
+      <h3>What TechLab builds</h3>
+      <ul class="features">
+        <li>1–3 page business website introducing your offer and making contact easy</li>
+        <li>Mobile-ready layout that looks sharp on phones and desktops</li>
+        <li>Contact + WhatsApp buttons for quick enquiries</li>
+        <li>Free domain included in this package</li>
+        <li>Domain connection and go-live support</li>
+        <li>Free basic Google setup for emails on your domain</li>
+      </ul>
+    </section>
+
+    <div class="money">
+      <div class="money-box">
+        <p class="label">Investment</p>
+        <div class="money-row total">
+          <span>TechLab total</span>
+          <span class="amt">P1,500</span>
+        </div>
+        <div class="money-row">
+          <span>50% deposit to start</span>
+          <span class="amt">P750</span>
+        </div>
+        <div class="money-row">
+          <span>Balance on handover</span>
+          <span class="amt">P750</span>
+        </div>
+        <p class="note">
+          Google Workspace or Microsoft 365 (if chosen later) have their own subscription charges — not part of this P1,500.
+        </p>
+      </div>
+      <div class="money-box bank">
+        <p class="label">Bank details for deposit</p>
+        <dl>
+          <dt>Account name</dt><dd>QUEENAY PTY LTD</dd>
+          <dt>Bank</dt><dd>Bank of Baroda</dd>
+          <dt>Account no.</dt><dd>5240200004932</dd>
+          <dt>Branch</dt><dd>Palapye</dd>
+          <dt>Branch code</dt><dd>110167</dd>
+          <dt>SWIFT</dt><dd>BARBBWGXXXX</dd>
+          <dt>Reference</dt><dd>TLB-WEB-20260727</dd>
+        </dl>
+      </div>
+    </div>
+
+    <div class="timeline">
+      <div class="pill">
+        <p class="label">Timeline</p>
+        <strong>2–3 days</strong>
+        <p class="note" style="margin-top:8px">After deposit and content details are ready.</p>
+      </div>
+      <div class="next">
+        <p class="label">Next step</p>
+        Reply <strong>Approved</strong>, send proof of the <strong>P750</strong> deposit, and share your preferred domain name — we will start immediately.
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div>
+        <strong>WhatsApp +267 76 984 827</strong> · techlabbw.co.bw
+      </div>
+      <div>Mahalapye · Nationwide Botswana</div>
+    </footer>
+  </div>
+</body>
+</html>
